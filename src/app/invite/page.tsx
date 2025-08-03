@@ -1614,7 +1614,7 @@ const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
   }
 
   return (
-    <div className="bg-white min-h-screen flex items-center justify-center pb-10">
+    <div className="bg-white min-h-screen flex items-center justify-center">
       <div className="relative max-w-lg w-full overflow-hidden bg-pink-50 text-center text-brown-700">
         {/* Bouton de langue */}
         <button 
