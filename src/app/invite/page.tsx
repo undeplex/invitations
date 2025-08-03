@@ -1663,7 +1663,7 @@ const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
                 </clipPath>
               </defs>
               <image
-                href="/couple-picture-3.jpg"
+                href="https://i.ibb.co/5WqS64p9/couple-picture-3.webp"
                 width="260"
                 height="260"
                 clipPath="url(#hexClip)"
