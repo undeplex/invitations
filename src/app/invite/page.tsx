@@ -1820,7 +1820,7 @@ const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
             </div>
           </div>
 
-          <button 
+          {/* <button 
             onClick={handleClick}
             className="mt-3 text-xs text-gray-500 hover:text-gray-700 cursor-pointer"
             disabled={showQR}
@@ -1828,7 +1828,7 @@ const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
             {language === 'fr' 
               ? (showQR ? 'QR Code visible' : 'Cliquez 3 fois pour afficher') 
               : (showQR ? 'QR Code visible' : 'Click 3 times to show')}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
