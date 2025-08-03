@@ -13,10 +13,10 @@ module.exports = {
   theme: {
     extend: {
        colors: {
-        iceBlue: '#E6F0F6',
-        powderBlue: '#BFD7ED',
-        skyMist: '#A8CDE7',
-        dustyBlue: '#7BAFD4',
+        blue1: '#f5fcff',
+        blue2: '#dbf3fa',
+        blue3: '#50b8e7',
+        blue4: '#0475a1',
         slateBlue: '#4C6E91',
       },
     },

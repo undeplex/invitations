@@ -3,11 +3,11 @@
 @tailwind utilities; 
 @font-face { 
   font-family: ubuntu;
-  src: url(/libre.ttf);
+  src: url(/RusticRoadway.otf);
 }     
 @font-face {
   font-family: serifo;
-  src: url(/sun.otf);
+  src: url(/mic.ttf);
 
 } 
 @font-face {

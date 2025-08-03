@@ -1615,11 +1615,11 @@ const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
 
   return (
     <div className="bg-white min-h-screen flex items-center justify-center">
-      <div className="relative max-w-lg w-full overflow-hidden bg-pink-50 text-center text-brown-700">
+      <div className="relative max-w-lg w-full overflow-hidden bg-blue1 text-center text-brown-700">
         {/* Bouton de langue */}
         <button 
           onClick={() => setLanguage(lang => lang === 'fr' ? 'en' : 'fr')}
-          className="absolute top-4 right-4 z-50 bg-pink-100 hover:bg-pink-200 text-pink-800 px-3 py-1 rounded-full flex items-center text-sm transition-colors"
+          className="absolute top-4 right-4 z-50 bg-blue2 hover:bg-blue-200 text-blue4 px-3 py-1 rounded-full flex items-center text-sm transition-colors"
         >
           <FiGlobe className="mr-2" />
           {language === 'fr' ? 'English' : 'Français'}
@@ -1637,11 +1637,11 @@ const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         
         {/* Participant Name */}
         <div className="mt-16 pt-7">
-          <h1 className="text-2xl font-bold text-brown-700">
+          <h1 className="text-2xl serifo font-bold text-brown-700">
             {qrData.participants[0].name}
           </h1>
           {qrData.isCouple && qrData.participants[1].name && (
-            <h1 className="text-2xl font-bold text-brown-700">
+            <h1 className="text-2xl serifo font-bold text-brown-700">
               & {qrData.participants[1].name}
             </h1>
           )}
@@ -1802,8 +1802,8 @@ const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
             <div>
               <p className="text-red-700 text-sm">
                 {language === 'fr' 
-                  ? 'Veuillez capturer ce code si vous avez déjà été appelée ou notifiée. Ne le partagez pas, sinon il sera invalidé.' 
-                  : 'Please capture this code if you have already been called or notified. Do not share it, otherwise it will be invalidated.'}
+                  ? `Votre code QR d'entrée sera visible 24h avant la réception sur cette page. En cas de perte du lien ou du téléphone, l'équipe d'accueil pourra vous aider à accéder à l'événement.` 
+                  : 'Your entry QR code will be available 24h before the event at the current page. If you lose the link or your phone, our staff will assist you at check-in.'}
               </p>
             </div>
           </div>
