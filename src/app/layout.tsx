@@ -104,7 +104,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/couple-picture-3.png",
+        url: "https://i.ibb.co/5WqS64p9/couple-picture-3.webp",
         width: 1200,
         height: 630,
         alt: "Description de l'image",
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Votre Titre pour Twitter",
     description: "Description pour Twitter",
-    images: ["/couple-picture-3.png"],
+    images: ["https://i.ibb.co/5WqS64p9/couple-picture-3.webp"],
   },
 };
 // URLSearchParams
@@ -127,7 +127,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="force-light-mode" data-mode="light">
       <head>
-        <link rel="preload" href="/couple-picture-3.png" as="image" />
+        <link rel="preload" href="https://i.ibb.co/5WqS64p9/couple-picture-3.webp" as="image" />
       </head>
       <body>
         <ForceLightMode />
