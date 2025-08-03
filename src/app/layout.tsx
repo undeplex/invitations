@@ -100,7 +100,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Invitation",
     description: "Voici votre lien pour obtenir une invitation à mon mariage",
-    url: "https://invitationmariage.vercel.app",
+    url: "https://justinvitation.vercel.app",
     type: "website",
     images: [
       {
@@ -130,7 +130,7 @@ export default function RootLayout({
         <link rel="preload" href="https://i.ibb.co/5WqS64p9/couple-picture-3.webp" as="image" />
       </head>
       <body>
-        <ForceLightMode />
+        
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

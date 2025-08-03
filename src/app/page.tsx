@@ -9,7 +9,7 @@
              <img className='size-[129px] bg-pink-100 p-4 mx-auto rounded-full' src="/logo.svg"/>
            </div>
          <h1 className="text-4xl serifo font-bold my-5 text-center text-slate-600 mb-8">
-           Dan & Falone Wedding
+           Vusi & Christelle Wedding
          </h1>
           <div className="text-gray-600">
             
