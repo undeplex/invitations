@@ -881,123 +881,63 @@ export default function AdminLinkGenerator() {
     setTimeout(() => setNotification({ show: false, message: '', type: '' }), 5000)
   }
 
-  // const generateLink = async () => {
-  //   if (!name.trim()) {
-  //     showNotification('Please enter a name for the link', 'error')
-  //     return
-  //   }
-
-  //   try {
-  //     setIsLoading(true)
-  //     const id = uuidv4()
-  //     const signature = generateSignature(id, isCouple)
-  //     const params = new URLSearchParams({
-  //       id,
-  //       couple: String(isCouple),
-  //       sig: signature
-  //     })
-
-  //     const newLink = {
-  //       id,
-  //       name: name.trim(),
-  //       is_couple: isCouple,
-  //       url: `${window.location.origin}/qr-form?${params.toString()}`,
-  //       signature,
-  //       created_at: new Date().toISOString()
-  //     }
-
-  //     // Insert into database first
-  //     const { error } = await supabase
-  //       .from('links')
-  //       .insert(newLink)
-
-  //     if (error) throw error
-
-  //     // Then update state with the new link including registration status
-  //     const isRegistered = await checkRegistrationStatus(newLink.id)
-      
-  //     setLinks(prevLinks => [{
-  //       id: newLink.id,
-  //       name: newLink.name,
-  //       isCouple: newLink.is_couple,
-  //       url: newLink.url,
-  //       signature: newLink.signature,
-  //       createdAt: parseDate(newLink.created_at),
-  //       isRegistered
-  //     }, ...prevLinks])
-      
-  //     setName('')
-  //     setIsCouple(false)
-  //     showNotification('Link generated successfully!', 'success')
-  //     setCurrentPage(1)
-  //   } catch (error) {
-  //     console.error('Error generating link:', error)
-  //     showNotification('Error generating link', 'error')
-  //   } finally {
-  //     setIsLoading(false)
-  //   }
-  // }
-
-  interface SupabaseError {
-  message: string;
-  details?: string;
-  code?: string;
-}
-const generateLink = async () => {
-  if (!name.trim()) {
-    showNotification('Please enter a name for the link', 'error')
-    return
-  }
-
-  try {
-    setIsLoading(true)
-    // Génération de l'UUID
-    const id = uuidv4()
-    
-    // Validation que l'UUID est valide
-    if (!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)) {
-      throw new Error('Invalid UUID format')
+  const generateLink = async () => {
+    if (!name.trim()) {
+      showNotification('Please enter a name for the link', 'error')
+      return
     }
 
-    const signature = generateSignature(id, isCouple)
-    const params = new URLSearchParams({
-      id,
-      couple: String(isCouple),
-      sig: signature
-    })
+    try {
+      setIsLoading(true)
+      const id = uuidv4()
+      const signature = generateSignature(id, isCouple)
+      const params = new URLSearchParams({
+        id,
+        couple: String(isCouple),
+        sig: signature
+      })
 
-    const newLink = {
-      id, // L'UUID généré
-      name: name.trim(),
-      is_couple: isCouple,
-      url: `${window.location.origin}/qr-form?${params.toString()}`,
-      signature,
-      created_at: new Date().toISOString()
+      const newLink = {
+        id,
+        name: name.trim(),
+        is_couple: isCouple,
+        url: `${window.location.origin}/qr-form?${params.toString()}`,
+        signature,
+        created_at: new Date().toISOString()
+      }
+
+      // Insert into database first
+      const { error } = await supabase
+        .from('links')
+        .insert(newLink)
+
+      if (error) throw error
+
+      // Then update state with the new link including registration status
+      const isRegistered = await checkRegistrationStatus(newLink.id)
+      
+      setLinks(prevLinks => [{
+        id: newLink.id,
+        name: newLink.name,
+        isCouple: newLink.is_couple,
+        url: newLink.url,
+        signature: newLink.signature,
+        createdAt: parseDate(newLink.created_at),
+        isRegistered
+      }, ...prevLinks])
+      
+      setName('')
+      setIsCouple(false)
+      showNotification('Link generated successfully!', 'success')
+      setCurrentPage(1)
+    } catch (error) {
+      console.error('Error generating link:', error)
+      showNotification('Error generating link', 'error')
+    } finally {
+      setIsLoading(false)
     }
-
-    // Insertion dans la base de données
-    const { error } = await supabase
-      .from('links')
-      .insert(newLink)
-
-    if (error) throw error
-
-    // ... reste du code inchangé ...
-  } catch (error) {
-  let errorMessage = 'Error generating link';
-  
-  // Vérification du type d'erreur
-  if (typeof error === 'object' && error !== null) {
-    const supabaseError = error as SupabaseError;
-    errorMessage += ': ' + (supabaseError.message || 'Unknown database error');
-  } else if (typeof error === 'string') {
-    errorMessage += ': ' + error;
   }
 
-  console.error('Error generating link:', error);
-  showNotification(errorMessage, 'error');
-}
-}
   const deleteLink = async (id: string) => {
     if (confirm('Are you sure you want to delete this link?')) {
       try {
@@ -1034,7 +974,7 @@ const generateLink = async () => {
     if (navigator.share) {
       navigator.share({
         title: `Bonjour ${name}`,
-        text: `${name} Veuillez cliquer sur le lien si dessous pour obtenir votre invitation au mariage de Dan & Falonne. \n\nQuestions ? Contactez-nous au : ${SUPPORT_PHONE} \n\n Lien :`,
+        text: `${name} Veuillez cliquer sur le lien si dessous pour obtenir votre invitation au mariage de Vusi & Christelle. \n\nQuestions ? Contactez-nous au : ${SUPPORT_PHONE} \n\n Lien :`,
         url: url,
       }).catch(() => {
         copyLink(url);
