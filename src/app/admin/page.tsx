@@ -240,7 +240,7 @@ export default function AdminLinkGenerator() {
     if (navigator.share) {
       navigator.share({
         title: `Bonjour ${name}`,
-        text: `${name} Veuillez cliquer sur le lien si dessous pour obtenir votre invitation au mariage de Dan & Falonne. \n\nQuestions ? Contactez-nous au : ${SUPPORT_PHONE} \n\n Lien :`,
+        text: `${name} Veuillez cliquer sur le lien si dessous pour obtenir votre invitation au mariage de Christelle & Vusi. \n\nQuestions ? Contactez-nous au : ${SUPPORT_PHONE} \n\n Lien :`,
         url: url,
       }).catch(() => {
         copyLink(url);
