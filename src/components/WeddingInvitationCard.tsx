@@ -612,16 +612,16 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         {/* Bouton de changement de langue */}
         <button 
           onClick={toggleLanguage}
-          className="absolute top-4 right-4 z-50 flex items-center gap-2 border-green-700 border bg-gree-600/20 px-2 py-2 rounded-full shadow-sm hover:bg-white transition-all"
+          className="absolute top-4 right-4 z-50 flex items-center gap-1 border-green-700 border bg-gree-600/20 px-2 py-1 rounded-full shadow-sm hover:bg-white transition-all"
         >
           <FaLanguage className="text-green-700" />
           <span className="text-sm  text-green-800">{language === 'fr' ? 'ENGLISH' : 'FRANCAIS'}</span>
         </button>
 
         {/* Floral Decorations */}
-        <img src="/fleure.web" alt="Top Left Flower" loading="lazy" className="absolute w-[270px] -top-[155px] rotate-[-8deg] left-[-138px]" />
+        <img src="/fleure.webp" alt="Top Left Flower" loading="lazy" className="absolute w-[270px] -top-[155px] rotate-[-8deg] left-[-138px]" />
         <img src="/top.webp" alt="Top Right Flower" loading="lazy" className="absolute w-[165px] top-[26px] -right-[190px]" />
-        <img src="/wed-day.webp" alt="Wedding Day" loading="lazy" className="absolute top-[2%] w-[112px] left-[50%] -translate-x-[50%] -translate-y-[50%]" />
+        <img src="/wed-day.webp" alt="Wedding Day" loading="lazy" className="absolute top-[2%] w-[102px] left-[50%] -translate-x-[50%] -translate-y-[50%]" />
         <img src="/ecal.webp" alt="Bottom Left Flower" loading="lazy" className="absolute w-[280px] -bottom-[83px] -left-[120px]" />
         <img src="/deco.webp" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-0 right-0 w-32" />
         <img src="/fleure-deco.webp" alt="Bottom Right Flower" loading="lazy" className="absolute top-[145px] -right-[17px] w-[83px]" />
