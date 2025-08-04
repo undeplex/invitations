@@ -709,7 +709,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
                 <img src={date.icon} className='size-7 rotate-2' loading="lazy" />
                 <p className="text-gray-600 serif text-xl my-2"> {date.time}</p>
               </div>
-              <FaArrowDown size={12} className='block mx-auto animate-bounce text-blue-400' />
+              <FaArrowDown size={12} className='block c mx-auto animate-bounce text-blue-400' />
               <p className="text-gray-600 text-xl">{date.event}</p>
             </div>
           ))}
@@ -741,7 +741,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
                     : "A QR code will appear 24h before the ceremony. Show it at the reception. If your phone or code is lost, assistance will be available at the entrance."}
                 </p>
               </div>
-            </div>
+            </div> 
           </div>
            <div className="grid blur-lg mx-auto rounded-xl my-3 p-3 border border-blue-200 w-max place-items-center relative" style={{ backgroundColor: '#f8fbff' }}>
             <div>
