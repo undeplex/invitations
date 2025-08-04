@@ -609,10 +609,10 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         {/* Bouton de changement de langue */}
         <button 
           onClick={toggleLanguage}
-          className="absolute top-4 right-4 z-50 flex items-center gap-2 border-green-700 border bg-gree-600/20 px-3 py-2 rounded-full shadow-sm hover:bg-white transition-all"
+          className="absolute top-4 right-4 z-50 flex items-center gap-2 border-green-700 border bg-gree-600/20 px-2 py-2 rounded-full shadow-sm hover:bg-white transition-all"
         >
           <FaLanguage className="text-green-700" />
-          <span className="text-sm serifo text-green-800">{language === 'fr' ? 'ENGLISH' : 'FRANCAIS'}</span>
+          <span className="text-sm  text-green-800">{language === 'fr' ? 'ENGLISH' : 'FRANCAIS'}</span>
         </button>
 
         {/* Floral Decorations */}
