@@ -127,6 +127,10 @@ export default function RootLayout({
   return (
     <html lang="fr" className="force-light-mode" data-mode="light">
       <head>
+         
+        <link rel="preload" href="/couple-picture-3.webp" as="image" />
+        {/* Autres balises meta... */}
+     
         <link rel="preload" href="https://i.ibb.co/5WqS64p9/couple-picture-3.webp" as="image" />
       </head>
       <body>

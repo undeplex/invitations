@@ -494,6 +494,7 @@ import { QRCodeSVG } from 'qrcode.react'
 import { FiAlertTriangle } from 'react-icons/fi'
 import { FaArrowDown, FaLanguage } from 'react-icons/fa'
 import { Heart } from 'lucide-react'
+import Head from 'next/head'
 
 interface Participant {
   name: string
@@ -604,7 +605,9 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
   const content = language === 'fr' ? frenchContent : englishContent
 
   return (
+    
     <div className="min-h-screen  h flex items-center justify-center" style={{ backgroundColor: '#f0f8ff' }}>
+     
       <div className="relative max-w-lg w-full overflow-hidden text-center text-gray-800" style={{ backgroundColor: '#fff' }}>
         {/* Bouton de changement de langue */}
         <button 
@@ -641,7 +644,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
 
         {/* Couple Photo - Version originale */}
         <div className="my-6 relative">
-          <div className="relative w-[340px] h-[340px] mx-auto">
+          <div className="relative w-[290px] h-[290px] mx-auto">
             <svg
               viewBox="0 0 260 260"
               className="absolute top-0 left-0 w-full h-full z-10"
