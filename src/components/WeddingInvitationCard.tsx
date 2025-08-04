@@ -604,15 +604,15 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
   const content = language === 'fr' ? frenchContent : englishContent
 
   return (
-    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#f0f8ff' }}>
-      <div className="relative max-w-lg w-full overflow-hidden text-center text-gray-800" style={{ backgroundColor: '#f0f8ff' }}>
+    <div className="min-h-screen  h flex items-center justify-center" style={{ backgroundColor: '#f0f8ff' }}>
+      <div className="relative max-w-lg w-full overflow-hidden text-center text-gray-800" style={{ backgroundColor: '#fff' }}>
         {/* Bouton de changement de langue */}
         <button 
           onClick={toggleLanguage}
-          className="absolute top-4 right-4 z-50 flex items-center gap-2 bg-white/80 px-3 py-1 rounded-full shadow-sm hover:bg-white transition-all"
+          className="absolute top-4 right-4 z-50 flex items-center gap-2 border-green-700 border bg-gree-600/20 px-3 py-2 rounded-full shadow-sm hover:bg-white transition-all"
         >
-          <FaLanguage className="text-gray-600" />
-          <span className="text-sm text-gray-700">{language === 'fr' ? 'ENGLISH' : 'FRANCAIS'}</span>
+          <FaLanguage className="text-green-700" />
+          <span className="text-sm serifo text-green-800">{language === 'fr' ? 'ENGLISH' : 'FRANCAIS'}</span>
         </button>
 
         {/* Floral Decorations */}
