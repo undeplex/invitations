@@ -96,10 +96,10 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Invitation",
-  description: "Voici votre lien pour obtenir une invitation à mon mariage",
+  description: "Voici votre lien d'invitation à notre mariage",
   openGraph: {
     title: "Invitation",
-    description: "Voici votre lien pour obtenir une invitation à mon mariage",
+    description: "Voici votre lien  d'invitation à notre mariage",
     url: "https://justinvitation.vercel.app",
     type: "website",
     images: [

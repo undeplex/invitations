@@ -9,7 +9,7 @@ export default function WeddingLoader() {
     <div className="relative w-full h-screen bg-stone-50 flex flex-col items-center justify-center text-center overflow-hidden">
       {/* Fleur en coin bas-gauche */}
       <Image
-        src="/fleure.png"
+        src="/fleure.webp"
         alt="fleur eucalyptus"
         width={348}
         height={340}
@@ -25,7 +25,7 @@ export default function WeddingLoader() {
       
 
       <h1 className="text-3xl serifo md:text-5xl font-serif text-green-900 mb-2 tracking-wide">
-        Vuci & Christelle 
+        Christelle & Vusi
       </h1>
       <p className="text-sm md:text-lg text-green-600 mb-6">
         Une journée d’amour se prépare...
