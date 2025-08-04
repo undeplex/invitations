@@ -619,13 +619,13 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         </button>
 
         {/* Floral Decorations */}
-        <img src="/fleure.png" alt="Top Left Flower" loading="lazy" className="absolute w-[270px] -top-[155px] rotate-[-8deg] left-[-138px]" />
-        <img src="/top.png" alt="Top Right Flower" loading="lazy" className="absolute w-[165px] top-[26px] -right-[190px]" />
-        <img src="/wed-day.png" alt="Wedding Day" loading="lazy" className="absolute top-[2%] w-[112px] left-[50%] -translate-x-[50%] -translate-y-[50%]" />
-        <img src="/ecal.png" alt="Bottom Left Flower" loading="lazy" className="absolute w-[280px] -bottom-[83px] -left-[120px]" />
-        <img src="/deco.png" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-0 right-0 w-32" />
-        <img src="/fleure-deco.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[145px] -right-[17px] w-[83px]" />
-        <img src="/deco.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[130px] right-[17px] w-[53px]" />
+        <img src="/fleure.web" alt="Top Left Flower" loading="lazy" className="absolute w-[270px] -top-[155px] rotate-[-8deg] left-[-138px]" />
+        <img src="/top.webp" alt="Top Right Flower" loading="lazy" className="absolute w-[165px] top-[26px] -right-[190px]" />
+        <img src="/wed-day.webp" alt="Wedding Day" loading="lazy" className="absolute top-[2%] w-[112px] left-[50%] -translate-x-[50%] -translate-y-[50%]" />
+        <img src="/ecal.webp" alt="Bottom Left Flower" loading="lazy" className="absolute w-[280px] -bottom-[83px] -left-[120px]" />
+        <img src="/deco.webp" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-0 right-0 w-32" />
+        <img src="/fleure-deco.webp" alt="Bottom Right Flower" loading="lazy" className="absolute top-[145px] -right-[17px] w-[83px]" />
+        <img src="/deco.webp" alt="Bottom Right Flower" loading="lazy" className="absolute top-[130px] right-[17px] w-[53px]" />
         
         {/* Participant Name */}
         <div className="mt-16 pt-7">
@@ -675,7 +675,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
                 strokeWidth="4"
               />
             </svg>
-            <img src="/fleure.png" alt="Decoration" loading="lazy" className="absolute top-[50%] rotate-[31deg] z-50 translate-y-[-23%] right-[50%] translate-x-[50%] w-[305px]" />
+            <img src="/fleure.webp" alt="Decoration" loading="lazy" className="absolute top-[50%] rotate-[31deg] z-50 translate-y-[-23%] right-[50%] translate-x-[50%] w-[305px]" />
           </div>
         </div>
 

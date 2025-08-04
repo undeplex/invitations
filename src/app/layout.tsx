@@ -127,12 +127,12 @@ export default function RootLayout({
   return (
     <html lang="fr" className="force-light-mode" data-mode="light">
       <head>
-         <link rel="preload" href="/fleure.png" as="image" />
+         <link rel="preload" href="/fleure.webp" as="image" />
         <link rel="preload" href="/top.png" as="image" />
-        <link rel="preload" href="/wed-day.png" as="image" />
-        <link rel="preload" href="/ecal.png" as="image" />
-        <link rel="preload" href="/deco.png" as="image" />
-        <link rel="preload" href="/fleure-deco.png" as="image" />
+        <link rel="preload" href="/wed-day.webp" as="image" />
+        <link rel="preload" href="/ecal.webp" as="image" />
+        <link rel="preload" href="/deco.webp" as="image" />
+        <link rel="preload" href="/fleure-deco.webp" as="image" />
         <link rel="preload" href="/couple-picture-3.webp" as="image" />
         {/* Autres balises meta... */}
      
