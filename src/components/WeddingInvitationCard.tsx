@@ -55,9 +55,9 @@
 // //         <img src="/top-right-flower.png" alt="Top Right Flower" loading="lazy" className="absolute w-[165px] top-[26px] -right-[190px]" />
 // //         <img src="/wed-day.png" alt="Wedding Day" loading="lazy" className="absolute top-[2%] w-[112px] left-[50%] -translate-x-[50%] -translate-y-[50%]" />
 // //         <img src="/bottom-left-flower.png" alt="Bottom Left Flower" loading="lazy" className="absolute w-[290px] -bottom-[149px] -left-[130px]" />
-// //         <img src="/bottom-right-flower.png" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-0 right-0 w-32" />
-// //         <img src="/bottom-right-flower.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[550px] -left-[27px] w-[83px]" />
-// //         <img src="/bottom-right-flower.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[530px] left-[17px] w-[43px]" />
+// //         <img src="/fleure-deco.png" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-0 right-0 w-32" />
+// //         <img src="/fleure-deco.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[550px] -left-[27px] w-[83px]" />
+// //         <img src="/fleure-deco.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[530px] left-[17px] w-[43px]" />
         
 // //         {/* Participant Name */}
 // //         <div className="mt-16 pt-7">
@@ -289,9 +289,9 @@
 //         <img src="/top-right-flower.png" alt="Top Right Flower" loading="lazy" className="absolute w-[165px] top-[26px] -right-[190px]" />
 //         <img src="/wed-day.png" alt="Wedding Day" loading="lazy" className="absolute top-[2%] w-[112px] left-[50%] -translate-x-[50%] -translate-y-[50%]" />
 //         <img src="/bottom-left-flower.png" alt="Bottom Left Flower" loading="lazy" className="absolute w-[290px] -bottom-[149px] -left-[130px]" />
-//         <img src="/bottom-right-flower.png" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-0 right-0 w-32" />
-//         <img src="/bottom-right-flower.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[550px] -left-[27px] w-[83px]" />
-//         <img src="/bottom-right-flower.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[530px] left-[17px] w-[43px]" />
+//         <img src="/fleure-deco.png" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-0 right-0 w-32" />
+//         <img src="/fleure-deco.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[550px] -left-[27px] w-[83px]" />
+//         <img src="/fleure-deco.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[530px] left-[17px] w-[43px]" />
         
 
 
@@ -493,6 +493,7 @@ import { useState } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
 import { FiAlertTriangle } from 'react-icons/fi'
 import { FaArrowDown, FaLanguage } from 'react-icons/fa'
+import { Heart } from 'lucide-react'
 
 interface Participant {
   name: string
@@ -593,9 +594,9 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
       { day: "", time: "at 8:00 pm", event: "Dance Party", icon: "/glass.png" }
     ],
     locationTitle: "Ceremony Location",
-    location: "Royal Marquee",
+    location: "Chapiteau Royal",
     address: "Avenue des Chutes corner Kambove",
-    reference: "Reference: Ministry of Labor Haut-Katanga",
+    reference: "Reference: Ministère du travail Haut-Katanga",
     closing: "With all our joy,",
     families: "The family"
   }
@@ -615,13 +616,13 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         </button>
 
         {/* Floral Decorations */}
-        <img src="/top-left-flower.png" alt="Top Left Flower" loading="lazy" className="absolute w-[270px] -top-[146px] -left-[78px]" />
-        <img src="/top-right-flower.png" alt="Top Right Flower" loading="lazy" className="absolute w-[165px] top-[26px] -right-[190px]" />
+        <img src="/fleure.png" alt="Top Left Flower" loading="lazy" className="absolute w-[270px] -top-[155px] rotate-[-8deg] left-[-138px]" />
+        <img src="/top.png" alt="Top Right Flower" loading="lazy" className="absolute w-[165px] top-[26px] -right-[190px]" />
         <img src="/wed-day.png" alt="Wedding Day" loading="lazy" className="absolute top-[2%] w-[112px] left-[50%] -translate-x-[50%] -translate-y-[50%]" />
-        <img src="/bottom-left-flower.png" alt="Bottom Left Flower" loading="lazy" className="absolute w-[290px] -bottom-[149px] -left-[130px]" />
-        <img src="/bottom-right-flower.png" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-0 right-0 w-32" />
-        <img src="/bottom-right-flower.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[550px] -left-[27px] w-[83px]" />
-        <img src="/bottom-right-flower.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[530px] left-[17px] w-[43px]" />
+        <img src="/ecal.png" alt="Bottom Left Flower" loading="lazy" className="absolute w-[280px] -bottom-[83px] -left-[120px]" />
+        <img src="/deco.png" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-0 right-0 w-32" />
+        <img src="/fleure-deco.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[145px] -right-[17px] w-[83px]" />
+        <img src="/deco.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[130px] right-[17px] w-[53px]" />
         
         {/* Participant Name */}
         <div className="mt-16 pt-7">
@@ -666,21 +667,27 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
               <polygon
                 points="130,10 240,65 240,195 130,250 20,195 20,65"
                 fill="none"
-                stroke="#f3cfc9"
+                stroke="#A4B9A4"
                 strokeWidth="4"
               />
             </svg>
-            <img src="/image-photo.png" alt="Decoration" loading="lazy" className="absolute top-[50%] z-50 translate-y-[3%] right-[50%] translate-x-[50%] w-[195px]" />
+            <img src="/fleure.png" alt="Decoration" loading="lazy" className="absolute top-[50%] rotate-[31deg] z-50 translate-y-[-23%] right-[50%] translate-x-[50%] w-[295px]" />
           </div>
         </div>
 
         {/* Invitation Message */}
-        <div className="my-4 px-4 text-lg text-gray-700">
+        <div className="mt-[90px] px-4 text-lg text-gray-700">
           <p className="mb-4">{content.invitationText[0]}</p>
           
-          <div className="mt-4 flex mx-auto flex-col w-max serifo gap-3">
+          <div className="mt-4 flex mx-auto flex-col w-max font-bold ">
             <h3 className="text-3xl font-semibold text-gray-800">Christelle</h3>
-            <span className="text-lg font-bold text-blue-600">💖</span>
+            <span className="text-lg font-bold h-[23px] my-1 grid justify-center text-blue-600">
+              
+        <Heart className="text-green-700 spain inline-block"/>
+        <Heart className="text-green-500 translate-x-[14px] inline-block translate-y-[-23px] rotate-6"/>
+      
+
+            </span>
             <h3 className="text-3xl font-semibold text-gray-800">Vusi</h3>
           </div>
           
@@ -689,7 +696,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           <p className="mt-4">{content.invitationText[3]}</p>
         </div>
 
-        <p className="my-4 px-4 text-gray-600">
+        <p className="my-4 px-4 font-bold text-gray-600">
           {content.programTitle}
         </p>
        
@@ -697,25 +704,25 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         <div className="text-center space-y-4 px-2">
           {content.dates.map((date, index) => (
             <div key={index}>
-              {date.day && <p className="text-2xl font-serif text-blue-600 serifo">{date.day}</p>}
+              {date.day && <p className="text-2xl  text-green-800 font-bold ubuntu ">{date.day}</p>}
               <div className="flex items-center justify-center gap-2">
-                <img src={date.icon} className='size-7' loading="lazy" />
-                <p className="text-gray-600 serifo"> {date.time}</p>
+                <img src={date.icon} className='size-7 rotate-2' loading="lazy" />
+                <p className="text-gray-600 serif text-xl my-2"> {date.time}</p>
               </div>
               <FaArrowDown size={12} className='block mx-auto animate-bounce text-blue-400' />
-              <p className="text-gray-600 text-lg">{date.event}</p>
+              <p className="text-gray-600 text-xl">{date.event}</p>
             </div>
           ))}
         </div>
         
         {/* Location */}
         <div className="text-center px-2 mt-4">
-          <p className="text-2xl serifo font-serif text-blue-600">
+          <p className="text-2xl  text-green-800 font-bold">
             {content.locationTitle}
           </p>
-          <p className="text-gray-700 px-4 text-lg mt-2">{content.location}</p>
-          <p className="text-gray-600 text-lg">{content.address}</p>
-          <p className="text-gray-600 text-lg">{content.reference}</p>
+          <p className="px-4 text-3xl my-2 font-bold text-animated-color">{content.location}</p>
+          <p className="text-gray-600 text-xl">{content.address}</p>
+          <p className="text-gray-600 text-xl">{content.reference}</p>
         </div>
 
         {/* QR Code Section */}
@@ -730,8 +737,8 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
               <div>
                 <p className="text-red-700 text-sm">
                   {language === 'fr' 
-                    ? "Veuillez capturer ce code si vous avez déjà été appelée ou notifiée. Ne le partagez pas, sinon il sera invalidé. Pour toute question, un numéro de contact est disponible dans le lien fourni."
-                    : "Please capture this code if you have already been called or notified. Do not share it, otherwise it will be invalidated. For any questions, a contact number is available in the provided link."}
+                    ? "Un QR code s'affichera 24h avant la cérémonie. Présentez-le à la réception. En cas de souci (téléphone perdu ou lien perdu), une assistance sera disponible à l'entrée. "
+                    : "A QR code will appear 24h before the ceremony. Show it at the reception. If your phone or code is lost, assistance will be available at the entrance."}
                 </p>
               </div>
             </div>

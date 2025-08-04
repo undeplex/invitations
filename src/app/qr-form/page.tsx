@@ -6,7 +6,7 @@ import CryptoJS from 'crypto-js'
 import { createClient } from '@supabase/supabase-js'
 import { WeddingInvitationCard } from '@/components/WeddingInvitationCard'
 import { QRForm } from '@/components/QRForm'
-import { LoadingScreen } from '@/components/LoadingScreen'
+import WeddingLoader from '@/components/weddingLoader'
 import { ErrorScreen } from '@/components/ErrorScreen'
 
 // Configuration Supabase
@@ -284,7 +284,7 @@ export default function QRFormPage() {
   }, [fetchDataFromSupabase, checkLinkExists])
 
   if (pageState === 'loading') {
-    return <LoadingScreen />
+    return <WeddingLoader />
   }
 
   if (pageState === 'error') {

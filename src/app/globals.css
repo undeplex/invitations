@@ -15,6 +15,18 @@
   src: url(/RusticRoadway.otf);
 
 }
+@keyframes textColorCycle {
+  0% { color: #4B5563; }     /* gris */
+  25% { color: #3B82F6; }    /* bleu */
+  50% { color: #10B981; }    /* vert */
+  75% { color: #F59E0B; }    /* orange */
+  100% { color: #4B5563; }   /* retour au gris */
+}
+
+.text-animated-color {
+  animation: textColorCycle 5s infinite ease-in-out;
+}
+
 /* @font-face {
   font-family: serifo;
   src: url(/chillen.ttf);

@@ -16,7 +16,7 @@ module.exports = {
         blue1: '#f5fcff',
         blue2: '#dbf3fa',
         blue3: '#50b8e7',
-        blue4: '#0475a1',
+        gres:'#0f8a3c',
         slateBlue: '#4C6E91',
       },
     },
