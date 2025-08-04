@@ -641,7 +641,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
 
         {/* Couple Photo - Version originale */}
         <div className="my-6 relative">
-          <div className="relative w-[260px] h-[260px] mx-auto">
+          <div className="relative w-[340px] h-[340px] mx-auto">
             <svg
               viewBox="0 0 260 260"
               className="absolute top-0 left-0 w-full h-full z-10"
@@ -652,7 +652,8 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
                 </clipPath>
               </defs>
               <image
-                href="https://i.ibb.co/5WqS64p9/couple-picture-3.webp"
+                // href="https://i.ibb.co/5WqS64p9/couple-picture-3.webp"
+                href="/couple.jpg"
                 width="260"
                 height="260"
                 clipPath="url(#hexClip)"
@@ -671,7 +672,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
                 strokeWidth="4"
               />
             </svg>
-            <img src="/fleure.png" alt="Decoration" loading="lazy" className="absolute top-[50%] rotate-[31deg] z-50 translate-y-[-23%] right-[50%] translate-x-[50%] w-[295px]" />
+            <img src="/fleure.png" alt="Decoration" loading="lazy" className="absolute top-[50%] rotate-[31deg] z-50 translate-y-[-23%] right-[50%] translate-x-[50%] w-[305px]" />
           </div>
         </div>
 
