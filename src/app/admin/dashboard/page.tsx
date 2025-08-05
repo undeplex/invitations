@@ -2330,14 +2330,12 @@ interface QRData {
 
 // Liste des tables
 const TABLE_NAMES = [
-  "Al'basha", "Bodeguita", "Big five", "Casa italiano","Classic",
-  "Côte ouest", "Fabusness", "Galito's", "Hyper psaro",
-  "Hypnose", "Holly boom", "Istanbul", "Karavia",
-  "Latté", "La plazza", "La fourchette", "La brioche",
-  "Le fleuve","MMG", "Mulykap", "Mycose", "Mahir",
-  "Novotel","Plage", "Roco mama", "River city", "River side",
-  "Steak house", "Two seance", "TikTok", "The one",
-  "The garden","Spigot"
+  "Table-1", "Table-2", "Table-3", "Table-4", "Table-5",
+  "Table-6", "Table-7", "Table-8", "Table-9", "Table-10",
+  "Table-11", "Table-12", "Table-13", "Table-14", "Table-15",
+  "Table-16", "Table-17", "Table-18", "Table-19", "Table-20",
+  "Table-21", "Table-22", "Table-23", "Table-24", "Table-25",
+  "Table-Enfant"  // Optionnel : Si vous voulez exactement 25 tables, retirez cette ligne.
 ]
 
 type FilterType = 'all' | 'no-table' | 'single' | 'couple' | 'validated' | 'not-validated' | 'all-tables' | string

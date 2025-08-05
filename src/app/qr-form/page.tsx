@@ -174,9 +174,9 @@ export default function QRFormPage() {
         throw new Error('Veuillez remplir tous les champs requis avec un numéro de téléphone valide commençant par 0 (10 chiffres)')
       }
   
-      if (isCouple && !participants[1].name) {
-        throw new Error('Veuillez remplir tous les champs pour le participant 2')
-      }
+      // if (isCouple && !participants[1].name) {
+      //   throw new Error('Veuillez remplir tous les champs pour le participant 2')
+      // }
   
       if (secretCode.length !== 4) {
         throw new Error('Le code secret doit comporter exactement 4 chiffres')
