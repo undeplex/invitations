@@ -105,7 +105,7 @@ export const metadata: Metadata = {
     images: [
       {
         // url: "https://i.ibb.co/5WqS64p9/couple-picture-3.webp",
-        url: "https://justinvitation.vercel.app/couple-picture-3.webp",
+        url: "https://s6.imgcdn.dev/YCxtmB.webp",
         width: 1200,
         height: 630,
         alt: "Description de l'image",
@@ -116,7 +116,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Votre Titre pour Twitter",
     description: "Description pour Twitter",
-    images: ["https://justinvitation.vercel.app/couple-picture-3.webp"],
+    images: ["https://s6.imgcdn.dev/YCxtmB.webp"],
   },
 };
 // URLSearchParams
@@ -138,7 +138,7 @@ export default function RootLayout({
         {/* Autres balises meta... */}
      
         <link rel="preload" href="https://i.ibb.co/5WqS64p9/couple-picture-3.webp" as="image" />
-        <link rel="preload" href="https://justinvitation.vercel.app/couple-picture-3.webp" as="image" />
+        <link rel="preload" href="https://s6.imgcdn.dev/YCxtmB.webp" as="image" />
       </head>
       <body>
         
