@@ -104,8 +104,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        // url: "https://i.ibb.co/5WqS64p9/couple-picture-3.webp",
-        url: "https://s6.imgcdn.dev/YCxtmB.webp",
+        url: "https://i.ibb.co/5WqS64p9/couple-picture-3.webp",
         width: 1200,
         height: 630,
         alt: "Description de l'image",
@@ -116,7 +115,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Votre Titre pour Twitter",
     description: "Description pour Twitter",
-    images: ["https://s6.imgcdn.dev/YCxtmB.webp"],
+    images: ["https://i.ibb.co/5WqS64p9/couple-picture-3.webp"],
   },
 };
 // URLSearchParams
@@ -138,7 +137,6 @@ export default function RootLayout({
         {/* Autres balises meta... */}
      
         <link rel="preload" href="https://i.ibb.co/5WqS64p9/couple-picture-3.webp" as="image" />
-        <link rel="preload" href="https://s6.imgcdn.dev/YCxtmB.webp" as="image" />
       </head>
       <body>
         
