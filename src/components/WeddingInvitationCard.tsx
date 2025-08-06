@@ -595,9 +595,9 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
       { day: "", time: "at 8:00 pm", event: "Dance Party", icon: "/glass.png" }
     ],
     locationTitle: "Ceremony Location",
-    location: "Chapiteau Royal",
+    location: "Royal Marquee (Chapitau Royal)",
     address: "Avenue des Chutes coin Kambove",
-    reference: "Reference: Ministère du travail Haut-Katanga",
+    reference: "Reference: Ministry of Labor Haut-Katanga",
     closing: "With all our joy,",
     families: "The family"
   }
