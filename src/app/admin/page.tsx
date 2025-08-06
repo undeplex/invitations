@@ -969,12 +969,26 @@ export default function AdminLinkGenerator() {
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
-  const shareLink = (url: string, name: string) => {
+  // const shareLink = (url: string, name: string) => {
+  //   const SUPPORT_PHONE = "+243990664406";
+  //   if (navigator.share) {
+  //     navigator.share({
+  //       title: `Bonjour ${name}`,
+  //       text: `${name} Veuillez cliquer sur le lien si dessous pour obtenir votre invitation au mariage de Christelle & Vusi. \n\nQuestions ? Contactez-nous au : ${SUPPORT_PHONE} \n\n Lien :`,
+  //       url: url,
+  //     }).catch(() => {
+  //       copyLink(url);
+  //     });
+  //   } else {
+  //     copyLink(url);
+  //   }
+  // };
+const shareLink = (url: string, name: string) => {
     const SUPPORT_PHONE = "+243990664406";
     if (navigator.share) {
       navigator.share({
-        title: `Bonjour ${name}`,
-        text: `${name} Veuillez cliquer sur le lien si dessous pour obtenir votre invitation au mariage de Christelle & Vusi. \n\nQuestions ? Contactez-nous au : ${SUPPORT_PHONE} \n\n Lien :`,
+        title: `Hello/Bonjour ${name}`,
+        text: `${name}, please click the link below to get your invitation to Christelle & Vusi's wedding.\n${name}, veuillez cliquer sur le lien ci-dessous pour obtenir votre invitation au mariage de Christelle & Vusi.\n\nQuestions?/Des questions ? Contact us at/Contactez-nous au : ${SUPPORT_PHONE}\n\nLink/Lien :`,
         url: url,
       }).catch(() => {
         copyLink(url);
@@ -982,8 +996,7 @@ export default function AdminLinkGenerator() {
     } else {
       copyLink(url);
     }
-  };
-
+};
   const exportLinks = () => {
     try {
       const dataStr = JSON.stringify(links.map(link => ({
