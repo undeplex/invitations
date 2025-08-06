@@ -987,8 +987,8 @@ const shareLink = (url: string, name: string) => {
     const SUPPORT_PHONE = "+243990664406";
     if (navigator.share) {
       navigator.share({
-        title: `Hello/Bonjour ${name}`,
-        text: `${name}, please click the link below to get your invitation to Christelle & Vusi's wedding.\n${name}, veuillez cliquer sur le lien ci-dessous pour obtenir votre invitation au mariage de Christelle & Vusi.\n\nQuestions?/Des questions ? Contact us at/Contactez-nous au : ${SUPPORT_PHONE}\n\nLink/Lien :`,
+        // title: `Hello/Bonjour ${name}`,
+        text: `Hello/Bonjour ${name}.\n\n${name}, please click the link below to get your invitation to Christelle & Vusi's wedding.\n${name}, veuillez cliquer sur le lien ci-dessous pour obtenir votre invitation au mariage de Christelle & Vusi.\n\nQuestions?/Des questions ? Contact us at/Contactez-nous au : ${SUPPORT_PHONE}\n\nLink/Lien :`,
         url: url,
       }).catch(() => {
         copyLink(url);
