@@ -567,7 +567,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     ],
     programTitle: "PROGRAMME DE MARIAGE",
     dates: [
-      { day: "Vendredi 29 Août 2025", time: "à 9h30", event: "Mariage Civil", icon: "/certificate.png" },
+      { day: "Vendredi 29 Août 2025", time: "à 11h00", event: "Mariage Civil", icon: "/certificate.png" },
       { day: "Samedi 30 Août 2025", time: "à 14h00", event: "Mariage Religieux", icon: "/rings.png" },
       { day: "", time: "à 20h00", event: "Soirée dansante", icon: "/glass.png" }
     ],
@@ -590,7 +590,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     ],
     programTitle: "WEDDING PROGRAM",
     dates: [
-      { day: "Friday August 29, 2025", time: "at 9:30 am", event: "Civil Wedding", icon: "/certificate.png" },
+      { day: "Friday August 29, 2025", time: "at 11:00 am", event: "Civil Wedding", icon: "/certificate.png" },
       { day: "Saturday August 30, 2025", time: "at 2:00 pm", event: "Religious Wedding", icon: "/rings.png" },
       { day: "", time: "at 8:00 pm", event: "Dance Party", icon: "/glass.png" }
     ],
