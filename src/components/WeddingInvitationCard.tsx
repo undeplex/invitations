@@ -758,11 +758,11 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
               </div>
             </div> 
           </div>
-           <div className="grid blur-lg mx-auto rounded-xl my-3 p-3 border border-blue-200 w-max place-items-center relative" style={{ backgroundColor: '#f8fbff' }}>
+           <div className="grid mx-auto rounded-xl my-3 p-3 border border-blue-200 w-max place-items-center relative" style={{ backgroundColor: '#f8fbff' }}>
             <div>
               <QRCodeSVG
                 value={JSON.stringify(qrContent)}
-                size={180}
+                size={190}
                 level="H"
                 includeMargin={true}
                 fgColor="#000"
