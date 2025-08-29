@@ -97,7 +97,10 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     address: "Avenue des Chutes coin Kambove",
     reference: "Référence: Ministère du travail Haut-Katanga",
     closing: "Avec toute notre joie,",
-    families: "La famille"
+    families: "La famille",
+    securityMessage: "Pour des raisons de sécurité, la réception des invités commence à 18h30. Veuillez vous présenter à la salle à cette heure.",
+    qrInstruction: "PRÉSENTEZ CE CODE QR À L'ENTRÉE - NE PAS PARTAGER",
+    qrDescription: "Ce code QR est votre billet d'entrée. En cas de problème, une assistance sera disponible à l'entrée."
   }
 
   // Contenu en anglais
@@ -120,7 +123,10 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     address: "Avenue des Chutes coin Kambove",
     reference: "Reference: Ministry of Labor Haut-Katanga",
     closing: "With all our joy,",
-    families: "The family"
+    families: "The family",
+    securityMessage: "For security reasons, guest reception starts at 6:30 PM. Please arrive at the venue at this time.",
+    qrInstruction: "PRESENT THIS QR CODE AT ENTRANCE - DO NOT SHARE",
+    qrDescription: "This QR code is your entry ticket. If you encounter any issues, assistance will be available at the entrance."
   }
 
   const content = language === 'fr' ? frenchContent : englishContent
@@ -173,19 +179,19 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
 
         {/* QR Code Section - Déplacé en haut */}
         <div className="mt-4 mb-6 relative">
-          <div className={`mx-auto p-2 border-2 ${isPulsing ? 'border-green-500' : 'border-blue-300'} rounded-xl transition-all duration-1000 w-max relative`}
+          <div className={`mx-auto p-2 border-4 ${isPulsing ? 'border-green-500' : 'border-blue-400'} rounded-xl transition-all duration-1000 w-max relative`}
                style={{ 
                  backgroundColor: '#f8fbff',
-                 boxShadow: isPulsing ? '0 0 15px rgba(72, 187, 120, 0.6)' : '0 0 5px rgba(66, 153, 225, 0.4)'
+                 boxShadow: isPulsing ? '0 0 20px rgba(72, 187, 120, 0.7)' : '0 0 10px rgba(59, 130, 246, 0.5)'
                }}>
-            <div className="absolute -top-2 -left-2 w-4 h-4 bg-green-500 rounded-full animate-ping"></div>
-            <div className="absolute -top-2 -right-2 w-4 h-4 bg-blue-500 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
-            <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-green-500 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-blue-500 rounded-full animate-ping" style={{ animationDelay: '1.5s' }}></div>
+            {/* Animation de contour circulaire */}
+            <div className="absolute inset-0 rounded-xl border-4 border-transparent">
+              <div className={`absolute inset-0 rounded-xl border-4 ${isPulsing ? 'border-green-300' : 'border-blue-200'} animate-ping opacity-75`}></div>
+            </div>
             
             <QRCodeSVG
               value={JSON.stringify(qrContent)}
-              size={140}
+              size={210}
               level="H"
               includeMargin={true}
               fgColor="#000"
@@ -195,19 +201,18 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           {/* Message pour le QR Code */}
           <div className="mt-3 px-4 text-center">
             <p className="text-sm font-bold text-green-700 mb-1">
-              {language === 'fr' 
-                ? "PRÉSENTEZ CE CODE QR À L'ENTRÉE - NE PAS PARTAGER"
-                : "PRESENT THIS QR CODE AT ENTRANCE - DO NOT SHARE"}
+              {content.qrInstruction}
+            </p>
+            <p className="text-xs text-gray-600 mb-2">
+              {content.qrDescription}
             </p>
             <p className="text-xs text-red-600 font-medium">
-              {language === 'fr' 
-                ? "Pour des raisons de sécurité, la réception des invités commence à 18h30. Veuillez vous présenter à la salle à cette heure."
-                : "For security reasons, guest reception starts at 6:30 PM. Please arrive at the venue at this time."}
+              {content.securityMessage}
             </p>
           </div>
         </div>
 
-        {/* Couple Photo - Version originale */}
+        {/* Couple Photo */}
         <div className="my-6 relative">
           <div className="relative w-[290px] h-[290px] mx-auto">
             <svg
@@ -299,13 +304,16 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
             <div>
               <p className="text-red-700 text-sm font-bold mb-2">
                 {language === 'fr' 
-                  ? "INFORMATION IMPORTANTE: Pour des raisons de sécurité, la réception des invités commence à 18h30. Veuillez vous présenter à la salle à cette heure."
-                  : "IMPORTANT INFORMATION: For security reasons, guest reception starts at 6:30 PM. Please arrive at the venue at this time."}
+                  ? "INFORMATION IMPORTANTE:"
+                  : "IMPORTANT INFORMATION:"}
+              </p>
+              <p className="text-red-700 text-sm mb-2">
+                {content.securityMessage}
               </p>
               <p className="text-red-700 text-sm">
                 {language === 'fr' 
-                  ? "Présentez votre code QR à l'entrée. En cas de souci (téléphone perdu ou code perdu), une assistance sera disponible."
-                  : "Present your QR code at the entrance. If your phone or code is lost, assistance will be available."}
+                  ? "Présentez votre code QR à l'entrée. En cas de souci, une assistance sera disponible."
+                  : "Present your QR code at the entrance. Assistance will be available if needed."}
               </p>
             </div>
           </div> 
