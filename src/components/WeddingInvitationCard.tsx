@@ -143,6 +143,23 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           <span className="text-sm text-green-800">{language === 'fr' ? 'ENGLISH' : 'FRANCAIS'}</span>
         </button>
 
+        {/* Information de sécurité en haut */}
+        <div className="border-2 border-red-300 bg-red-50 p-3 rounded-lg shadow-sm flex items-start gap-3 mx-4 mt-4">
+          <div className="text-red-500 block mt-0.5">
+            <FiAlertTriangle size={20} />
+          </div>
+          <div>
+            <p className="text-red-700 text-sm font-bold mb-1">
+              {language === 'fr' 
+                ? "INFORMATION IMPORTANTE:"
+                : "IMPORTANT INFORMATION:"}
+            </p>
+            <p className="text-red-700 text-xs">
+              {content.securityMessage}
+            </p>
+          </div>
+        </div>
+
         {/* Floral Decorations */}
         <img src="/fleure.webp" alt="Top Left Flower" loading="lazy" className="absolute w-[270px] -top-[155px] rotate-[-8deg] left-[-138px]" />
         <img src="/top.webp" alt="Top Right Flower" loading="lazy" className="absolute w-[165px] top-[26px] -right-[190px]" />
@@ -179,19 +196,13 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
 
         {/* QR Code Section - Déplacé en haut */}
         <div className="mt-4 mb-6 relative">
-          <div className={`mx-auto p-2 border-4 ${isPulsing ? 'border-green-500' : 'border-blue-400'} rounded-xl transition-all duration-1000 w-max relative`}
+          <div className="mx-auto p-2 border-2 border-blue-300 rounded-xl w-max relative"
                style={{ 
                  backgroundColor: '#f8fbff',
-                 boxShadow: isPulsing ? '0 0 20px rgba(72, 187, 120, 0.7)' : '0 0 10px rgba(59, 130, 246, 0.5)'
                }}>
-            {/* Animation de contour circulaire */}
-            <div className="absolute inset-0 rounded-xl border-4 border-transparent">
-              <div className={`absolute inset-0 rounded-xl border-4 ${isPulsing ? 'border-green-300' : 'border-blue-200'} animate-ping opacity-75`}></div>
-            </div>
-            
             <QRCodeSVG
               value={JSON.stringify(qrContent)}
-              size={210}
+              size={140}
               level="H"
               includeMargin={true}
               fgColor="#000"
@@ -203,11 +214,8 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
             <p className="text-sm font-bold text-green-700 mb-1">
               {content.qrInstruction}
             </p>
-            <p className="text-xs text-gray-600 mb-2">
+            <p className="text-xs text-gray-600">
               {content.qrDescription}
-            </p>
-            <p className="text-xs text-red-600 font-medium">
-              {content.securityMessage}
             </p>
           </div>
         </div>
@@ -293,30 +301,6 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           <p className="px-4 text-3xl my-2 font-bold text-animated-color">{content.location}</p>
           <p className="text-gray-600 text-xl">{content.address}</p>
           <p className="text-gray-600 text-xl">{content.reference}</p>
-        </div>
-
-        {/* Information de sécurité */}
-        <div className="mt-8 text-center p-2">
-          <div className="border-2 border-red-300 bg-red-50 p-4 rounded-2xl shadow-sm flex items-start gap-4">
-            <div className="text-red-500 block mt-1">
-              <FiAlertTriangle size={24} />
-            </div>
-            <div>
-              <p className="text-red-700 text-sm font-bold mb-2">
-                {language === 'fr' 
-                  ? "INFORMATION IMPORTANTE:"
-                  : "IMPORTANT INFORMATION:"}
-              </p>
-              <p className="text-red-700 text-sm mb-2">
-                {content.securityMessage}
-              </p>
-              <p className="text-red-700 text-sm">
-                {language === 'fr' 
-                  ? "Présentez votre code QR à l'entrée. En cas de souci, une assistance sera disponible."
-                  : "Present your QR code at the entrance. Assistance will be available if needed."}
-              </p>
-            </div>
-          </div> 
         </div>
 
         <div className="mt-8 text-center">
