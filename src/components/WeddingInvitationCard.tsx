@@ -127,7 +127,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     closing: "With all our joy,",
     families: "The family",
     securityMessage: "For security reasons, guest reception starts at 6:00 PM. Please arrive at the venue at this time.",
-    qrInstruction: "PRESENT THIS QR CODE AT ENTRANCE - DO NOT SHARE - YOU CAN SCREENSHOOT IT",
+    qrInstruction: "PRESENT THIS QR CODE AT ENTRANCE - DO NOT SHARE - YOU CAN TAKE A SCREENSHOT",
     qrDescription: "This QR code is your entry ticket. If you encounter any issues, assistance will be available at the entrance."
   }
 
