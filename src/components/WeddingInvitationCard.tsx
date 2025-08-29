@@ -199,7 +199,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           
           {/* Message pour le QR Code avec avertissement en rouge */}
           <div className="mt-3 px-4 text-center">
-            <p className="text-sm font-bold text-green-700 mb-1">
+            <p className="text-lg font-bold text-green-700 mb-1">
               {content.qrInstruction}
             </p>
             <p className="text-lg text-gray-600 mb-2">
