@@ -568,7 +568,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     programTitle: "PROGRAMME DE MARIAGE",
     dates: [
       { day: "Vendredi 29 Août 2025", time: "à 11h00", event: "Mariage Civil", icon: "/certificate.png" },
-      { day: "Samedi 30 Août 2025", time: "à 14h00", event: "Mariage Religieux", icon: "/rings.png" },
+      { day: "Samedi 30 Août 2025", time: "à 12h30", event: "Mariage Religieux", icon: "/rings.png" },
       { day: "", time: "à 20h00", event: "Soirée dansante", icon: "/glass.png" }
     ],
     locationTitle: "Lieu des cérémonies",
@@ -591,7 +591,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     programTitle: "WEDDING PROGRAM",
     dates: [
       { day: "Friday August 29, 2025", time: "at 11:00 am", event: "Civil Wedding", icon: "/certificate.png" },
-      { day: "Saturday August 30, 2025", time: "at 2:00 pm", event: "Religious Wedding", icon: "/rings.png" },
+      { day: "Saturday August 30, 2025", time: "at 12:30 pm", event: "Religious Wedding", icon: "/rings.png" },
       { day: "", time: "at 8:00 pm", event: "Dance Party", icon: "/glass.png" }
     ],
     locationTitle: "Ceremony Location",
@@ -752,8 +752,8 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
               <div>
                 <p className="text-red-700 text-sm">
                   {language === 'fr' 
-                    ? "Un QR code s'affichera 24h avant la cérémonie. Présentez-le à la réception. En cas de souci (téléphone perdu ou lien perdu), une assistance sera disponible à l'entrée. "
-                    : "A QR code will appear 24h before the ceremony. Show it at the reception. If your phone or code is lost, assistance will be available at the entrance."}
+                    ? "Un QR code s'affichera 24h avant la cérémonie. Présentez-le à la réception. En cas de souci (téléphone perdu ou lien perdu), une assistance sera disponible à l'entrée. Ce Code sera active dans quelques heures"
+                    : "A QR code will appear 24h before the ceremony. Show it at the reception. If your phone or code is lost, assistance will be available at the entrance. This code is going to be activated sooner"}
                 </p>
               </div>
             </div> 
