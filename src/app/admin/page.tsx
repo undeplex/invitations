@@ -988,7 +988,7 @@ const shareLink = (url: string, name: string) => {
     if (navigator.share) {
       navigator.share({
         // title: `Hello/Bonjour ${name}`,
-        text: `Hello/Bonjour ${name}.\n\n,"Please reopen the invitation to see the program updates - (Veuillez rouvrir l'invitation pour voir les mises à jour du programme.) Christelle & Vusi's wedding.\n${name}, Mariage de Christelle & Vusi.\n\nLink/Lien :`,
+        text: `Hello/Bonjour ${name}.\n\n,Please reopen the invitation to see the program updates - (Veuillez rouvrir l'invitation pour voir les mises à jour du programme.) Christelle & Vusi's wedding. Mariage de Christelle & Vusi.\n\nLink/Lien :`,
         url: url,
       }).catch(() => {
         copyLink(url);
