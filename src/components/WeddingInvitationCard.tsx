@@ -90,8 +90,8 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     dates: [
       { day: "Vendredi 29 Août 2025", time: "à 11h00", event: "Mariage Civil", icon: "/certificate.png" },
       { day: "Samedi 30 Août 2025", time: "à 12h30", event: "Mariage Religieux", icon: "/rings.png" },
-      { day: "", time: "à 19h00", event: "Arrivée des invités", icon: "/glass.png" },
-      { day: "", time: "à 19h30", event: "Soirée dansante", icon: "/glass.png" }
+      { day: "", time: "à 18h00", event: "Arrivée des invités", icon: "/glass.png" },
+      { day: "", time: "à 19h00", event: "Entrée des mariés", icon: "/glass.png" }
     ],
     locationTitle: "Lieu des cérémonies",
     location: "Chapiteau Royal",
@@ -99,7 +99,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     reference: "Référence: Ministère du travail Haut-Katanga",
     closing: "Avec toute notre joie,",
     families: "La famille",
-    securityMessage: "Pour des raisons de sécurité, la réception des invités commence à 19h00. Veuillez vous présenter à la salle à cette heure.",
+    securityMessage: "Pour des raisons de sécurité, l'arrivée  des invités commence à 18h00. Veuillez vous présenter à la salle à cette heure.",
     qrInstruction: "PRÉSENTEZ CE CODE QR À L'ENTRÉE - NE PAS PARTAGER",
     qrDescription: "Ce code QR est votre billet d'entrée. En cas de problème, une assistance sera disponible à l'entrée."
   }
@@ -117,8 +117,8 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     dates: [
       { day: "Friday August 29, 2025", time: "at 11:00 am", event: "Civil Wedding", icon: "/certificate.png" },
       { day: "Saturday August 30, 2025", time: "at 12:30 pm", event: "Religious Wedding", icon: "/rings.png" },
-      { day: "", time: "at 7:00 pm", event: "Guest Arrival", icon: "/glass.png" },
-      { day: "", time: "at 7:30 pm", event: "Dance Party", icon: "/glass.png" }
+      { day: "", time: "at 6:00 pm", event: "Guest Arrival", icon: "/glass.png" },
+      { day: "", time: "at 7:00 pm", event: "Arrival of the Bride and Groom", icon: "/glass.png" }
     ],
     locationTitle: "Ceremony Location",
     location: "Royal Marquee (Chapitau Royal)",
@@ -126,7 +126,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     reference: "Reference: Ministry of Labor Haut-Katanga",
     closing: "With all our joy,",
     families: "The family",
-    securityMessage: "For security reasons, guest reception starts at 7:00 PM. Please arrive at the venue at this time.",
+    securityMessage: "For security reasons, guest reception starts at 6:00 PM. Please arrive at the venue at this time.",
     qrInstruction: "PRESENT THIS QR CODE AT ENTRANCE - DO NOT SHARE",
     qrDescription: "This QR code is your entry ticket. If you encounter any issues, assistance will be available at the entrance."
   }
