@@ -90,6 +90,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     dates: [
       { day: "Vendredi 29 Août 2025", time: "à 11h00", event: "Mariage Civil", icon: "/certificate.png" },
       { day: "Samedi 30 Août 2025", time: "à 12h30", event: "Mariage Religieux", icon: "/rings.png" },
+      { day: "", time: "à 19h00", event: "Arrivée des invités", icon: "/glass.png" },
       { day: "", time: "à 19h30", event: "Soirée dansante", icon: "/glass.png" }
     ],
     locationTitle: "Lieu des cérémonies",
@@ -98,7 +99,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     reference: "Référence: Ministère du travail Haut-Katanga",
     closing: "Avec toute notre joie,",
     families: "La famille",
-    securityMessage: "Pour des raisons de sécurité, la réception des invités commence à 18h30. Veuillez vous présenter à la salle à cette heure.",
+    securityMessage: "Pour des raisons de sécurité, la réception des invités commence à 19h00. Veuillez vous présenter à la salle à cette heure.",
     qrInstruction: "PRÉSENTEZ CE CODE QR À L'ENTRÉE - NE PAS PARTAGER",
     qrDescription: "Ce code QR est votre billet d'entrée. En cas de problème, une assistance sera disponible à l'entrée."
   }
@@ -116,6 +117,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     dates: [
       { day: "Friday August 29, 2025", time: "at 11:00 am", event: "Civil Wedding", icon: "/certificate.png" },
       { day: "Saturday August 30, 2025", time: "at 12:30 pm", event: "Religious Wedding", icon: "/rings.png" },
+      { day: "", time: "at 7:00 pm", event: "Guest Arrival", icon: "/glass.png" },
       { day: "", time: "at 7:30 pm", event: "Dance Party", icon: "/glass.png" }
     ],
     locationTitle: "Ceremony Location",
@@ -124,7 +126,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     reference: "Reference: Ministry of Labor Haut-Katanga",
     closing: "With all our joy,",
     families: "The family",
-    securityMessage: "For security reasons, guest reception starts at 6:30 PM. Please arrive at the venue at this time.",
+    securityMessage: "For security reasons, guest reception starts at 7:00 PM. Please arrive at the venue at this time.",
     qrInstruction: "PRESENT THIS QR CODE AT ENTRANCE - DO NOT SHARE",
     qrDescription: "This QR code is your entry ticket. If you encounter any issues, assistance will be available at the entrance."
   }
@@ -185,7 +187,6 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
                  boxShadow: isPulsing ? '0 0 20px rgba(72, 187, 120, 0.7)' : '0 0 10px rgba(59, 130, 246, 0.5)'
                }}>
             {/* Animation de contour circulaire */}
-           
             
             <QRCodeSVG
               value={JSON.stringify(qrContent)}
@@ -196,7 +197,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
             />
           </div>
           
-          {/* Message pour le QR Code */}
+          {/* Message pour le QR Code avec avertissement en rouge */}
           <div className="mt-3 px-4 text-center">
             <p className="text-sm font-bold text-green-700 mb-1">
               {content.qrInstruction}
@@ -204,9 +205,21 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
             <p className="text-lg text-gray-600 mb-2">
               {content.qrDescription}
             </p>
-            <p className="text-lg text-red-600 font-medium">
-              {content.securityMessage}
-            </p>
+            <div className="border-2 border-red-300 bg-red-50 p-3 rounded-2xl shadow-sm flex items-start gap-3 mb-3">
+              <div className="text-red-500 block mt-1">
+                <FiAlertTriangle size={20} />
+              </div>
+              <div>
+                <p className="text-red-700 text-sm font-bold mb-1">
+                  {language === 'fr' 
+                    ? "INFORMATION IMPORTANTE:"
+                    : "IMPORTANT INFORMATION:"}
+                </p>
+                <p className="text-red-700 text-sm">
+                  {content.securityMessage}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
