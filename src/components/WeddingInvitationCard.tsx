@@ -29,12 +29,12 @@ const formatFrenchDate = (timestamp: number): string => {
   const date = new Date(timestamp)
   const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
   const months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
-  
+
   const dayName = days[date.getDay()]
   const day = date.getDate()
   const month = months[date.getMonth()]
   const year = date.getFullYear()
-  
+
   return `${dayName} ${day} ${month} ${year}`
 }
 
@@ -42,12 +42,12 @@ const formatEnglishDate = (timestamp: number): string => {
   const date = new Date(timestamp)
   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-  
+
   const dayName = days[date.getDay()]
   const day = date.getDate()
   const month = months[date.getMonth()]
   const year = date.getFullYear()
-  
+
   return `${dayName}, ${month} ${day}, ${year}`
 }
 
@@ -69,7 +69,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     const interval = setInterval(() => {
       setIsPulsing(prev => !prev)
     }, 1500)
-    
+
     return () => clearInterval(interval)
   }, [])
 
@@ -153,7 +153,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         <img src="/deco.webp" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-0 right-0 w-32" />
         <img src="/fleure-deco.webp" alt="Bottom Right Flower" loading="lazy" className="absolute top-[145px] -right-[17px] w-[83px]" />
         <img src="/deco.webp" alt="Bottom Right Flower" loading="lazy" className="absolute top-[130px] right-[17px] w-[53px]" />
-        
+
         {/* Participant Name */}
         <div className="mt-16 pt-7">
           {qrData.isCouple && (
@@ -177,50 +177,6 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           <p className="text-gray-600 mt-2">
             {content.title}
           </p>
-        </div>
-
-        {/* QR Code Section - Déplacé en haut */}
-        <div className="mt-4 mb-6 relative">
-          <div className={`mx-auto p-2 border-4 ${isPulsing ? 'border-green-500' : 'border-blue-400'} rounded-xl transition-all duration-1000 w-max relative`}
-               style={{ 
-                 backgroundColor: '#f8fbff',
-                 boxShadow: isPulsing ? '0 0 20px rgba(72, 187, 120, 0.7)' : '0 0 10px rgba(59, 130, 246, 0.5)'
-               }}>
-            {/* Animation de contour circulaire */}
-            
-            <QRCodeSVG
-              value={JSON.stringify(qrContent)}
-              size={210}
-              level="H"
-              includeMargin={true}
-              fgColor="#000"
-            />
-          </div>
-          
-          {/* Message pour le QR Code avec avertissement en rouge */}
-          <div className="mt-3 px-4 text-center">
-            <p className="text-sm font-bold text-green-700 mb-1">
-              {content.qrInstruction}
-            </p>
-            <p className="text-lg text-gray-600 mb-2">
-              {content.qrDescription}
-            </p>
-            <div className="border-2 border-red-300 bg-red-50 p-3 rounded-2xl shadow-sm flex items-start gap-3 mb-3">
-              <div className="text-red-500 block mt-1">
-                <FiAlertTriangle size={20} />
-              </div>
-              <div>
-                <p className="text-red-700 text-sm font-bold mb-1">
-                  {language === 'fr' 
-                    ? "INFORMATION IMPORTANTE:"
-                    : "IMPORTANT INFORMATION:"}
-                </p>
-                <p className="text-red-700 text-lg">
-                  {content.securityMessage}
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Couple Photo */}
@@ -262,7 +218,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         {/* Invitation Message */}
         <div className="mt-[90px] px-4 text-lg text-gray-700">
           <p className="mb-4">{content.invitationText[0]}</p>
-          
+
           <div className="mt-4 flex mx-auto flex-col w-max font-bold ">
             <h3 className="text-3xl font-semibold text-gray-800">Christelle</h3>
             <span className="text-lg font-bold h-[23px] my-1 grid justify-center text-blue-600">
@@ -271,7 +227,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
             </span>
             <h3 className="text-3xl font-semibold text-gray-800">Vusi</h3>
           </div>
-          
+
           <p className="mt-4">{content.invitationText[1]}</p>
           <p className="mt-2">{content.invitationText[2]}</p>
           <p className="mt-4">{content.invitationText[3]}</p>
@@ -280,7 +236,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         <p className="my-4 px-4 font-bold text-gray-600">
           {content.programTitle}
         </p>
-       
+
         {/* Date and Venue */}
         <div className="text-center space-y-4 px-2">
           {content.dates.map((date, index) => (
@@ -295,7 +251,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
             </div>
           ))}
         </div>
-        
+
         {/* Location */}
         <div className="text-center px-2 mt-4">
           <p className="text-2xl text-green-800 font-bold">
@@ -334,13 +290,38 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           <p className="text-gray-800 text-lg">{content.closing}</p>
           <p className="mt-2 text-gray-700 text-xl">{content.families}</p>
         </div>
-        
+
         {/* Signature */}
-        <p className="text-gray-600 text-sm mt-2 mb-8">
+        <p className="text-gray-600 text-sm mt-2">
           {language === 'fr' 
             ? formatFrenchDate(qrData.timestamp)
             : formatEnglishDate(qrData.timestamp)}
         </p>
+
+        {/* QR Code Section - DÉPLACÉ EN BAS */}
+        <div className="mt-8 mb-8 relative">
+          <div className={`mx-auto p-2 border-4 ${isPulsing ? 'border-green-500' : 'border-blue-400'} rounded-xl transition-all duration-1000 w-max relative blur-sm`}
+               style={{ 
+                 backgroundColor: '#f8fbff',
+                 boxShadow: isPulsing ? '0 0 20px rgba(72, 187, 120, 0.7)' : '0 0 10px rgba(59, 130, 246, 0.5)',
+                 transform: 'scale(0.8)'
+               }}>
+            <QRCodeSVG
+              value={JSON.stringify(qrContent)}
+              size={180}
+              level="H"
+              includeMargin={true}
+              fgColor="#000"
+            />
+          </div>
+
+          {/* Message pour le QR Code */}
+          <div className="mt-3 px-4 text-center">
+            <p className="text-sm font-bold text-green-700 mb-1">
+              {content.qrInstruction}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   )
