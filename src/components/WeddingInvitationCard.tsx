@@ -1,11 +1,350 @@
+// 'use client'
+
+// import { useState, useEffect } from 'react'
+// import { QRCodeSVG } from 'qrcode.react'
+// import { FiAlertTriangle } from 'react-icons/fi'
+// import { FaArrowDown, FaLanguage } from 'react-icons/fa'
+// import { Heart } from 'lucide-react'
+// import Head from 'next/head'
+
+// interface Participant {
+//   name: string
+//   number: string
+//   tableNumber?: string
+// }
+
+// interface QRData {
+//   id: string
+//   participants: Participant[]
+//   timestamp: number
+//   isCouple: boolean
+//   signature: string
+//   secretCode: string
+//   validated: boolean
+// }
+
+// const DEFAULT_TABLE_NUMBER = ''
+
+// const formatFrenchDate = (timestamp: number): string => {
+//   const date = new Date(timestamp)
+//   const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
+//   const months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
+
+//   const dayName = days[date.getDay()]
+//   const day = date.getDate()
+//   const month = months[date.getMonth()]
+//   const year = date.getFullYear()
+
+//   return `${dayName} ${day} ${month} ${year}`
+// }
+
+// const formatEnglishDate = (timestamp: number): string => {
+//   const date = new Date(timestamp)
+//   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+//   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+//   const dayName = days[date.getDay()]
+//   const day = date.getDate()
+//   const month = months[date.getMonth()]
+//   const year = date.getFullYear()
+
+//   return `${dayName}, ${month} ${day}, ${year}`
+// }
+
+// export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
+//   const qrContent = {
+//     participants: qrData.participants,
+//     isCouple: qrData.isCouple,
+//     tableNumber: qrData.participants[0]?.tableNumber || DEFAULT_TABLE_NUMBER,
+//     validated: qrData.validated,
+//     timestamp: qrData.timestamp
+//   }
+//   const [clickCount, setClickCount] = useState(0)
+//   const [showQR, setShowQR] = useState(false)
+//   const [language, setLanguage] = useState<'fr' | 'en'>('fr')
+//   const [isPulsing, setIsPulsing] = useState(false)
+
+//   useEffect(() => {
+//     // Animation de pulsation pour le QR code
+//     const interval = setInterval(() => {
+//       setIsPulsing(prev => !prev)
+//     }, 1500)
+
+//     return () => clearInterval(interval)
+//   }, [])
+
+//   const toggleLanguage = () => {
+//     setLanguage(prev => prev === 'fr' ? 'en' : 'fr')
+//   }
+
+//   // Contenu en français
+//   const frenchContent = {
+//     title: "Vous êtes invités",
+//     invitationText: [
+//       "C'est avec une immense joie que nous vous convions à partager le plus beau jour de notre vie, alors que nous unissons nos familles.",
+//       "La célébration se poursuivra autour d'un repas; Préparez vos sourires, votre joie, et surtout vos pas de danse...",
+//       "car l'amour sera célébré en musique, jusqu'au bout de la nuit, sous les couleurs vert olive blanc et argenté.",
+//       "Si vous souhaitez nous honorer, les cadeaux en espèces seront les bienvenus, comme tel est notre souhait."
+//     ],
+//     programTitle: "PROGRAMME DE MARIAGE",
+//     dates: [
+//       { day: "Vendredi 28 Novembre 2025", time: "à 11h00", event: "Mariage Civil", icon: "/certificate.png" },
+//       { day: "Samedi 29 Novembre 2025", time: "à 12h30", event: "Mariage Religieux", icon: "/rings.png" },
+//       { day: "", time: "à 19h00", event: "Reception", icon: "/glass.png" }
+//     ],
+//     locationTitle: "Lieu des cérémonies",
+//     location: "Grand Perchoir (Royal Marquee)",
+//     address: "Avenue des Chutes coin Kambove",
+//     reference: "Référence: Cra usine",
+//     closing: "Avec toute notre joie,",
+//     families: "La famille",
+//     securityMessage: "Pour des raisons de sécurité, l'arrivée  des invités commence à 18h00. Veuillez vous présenter à la salle à cette heure.",
+//     qrInstruction: "PRÉSENTEZ CE CODE QR À L'ENTRÉE ",
+//     qrDescription: "Ce code QR est votre billet d'entrée. En cas de problème, une assistance sera disponible à l'entrée."
+//   }
+
+//   // Contenu en anglais
+//   const englishContent = {
+//     title: "You are invited",
+//     invitationText: [
+//       "It is with great joy that we invite you to share the most beautiful day of our lives. As we unite families.",
+//       "The celebration will continue around a meal; Prepare your smiles, your joy, and especially your dance steps...",
+//       "Because love will be celebrated in music, until the end of the night, under the colors olive green white and silver.",
+//       "If you wish to honor us, cash gifts will be welcome, as such is our wish."
+//     ],
+//     programTitle: "WEDDING PROGRAM",
+//     dates: [
+//       { day: "Friday August 28, 2025", time: "at 11:00 am", event: "Civil Wedding", icon: "/certificate.png" },
+//       { day: "Saturday August 29, 2025", time: "at 12:30 pm", event: "Religious Wedding", icon: "/rings.png" },
+//       { day: "", time: "at 6:00 pm", event: "Guest Arrival", icon: "/glass.png" },
+//       { day: "", time: "at 7:00 pm", event: "Arrival of the Bride and Groom", icon: "/glass.png" }
+//     ],
+//     locationTitle: "Ceremony Location",
+//     location: "Royal Marquee (Chapitau Royal)",
+//     address: "Avenue des Chutes coin Kambove",
+//     reference: "Reference: Ministry of Labor Haut-Katanga",
+//     closing: "With all our joy,",
+//     families: "The family",
+//     securityMessage: "For security reasons, guest reception starts at 6:00 PM. Please arrive at the venue at this time.",
+//     qrInstruction: "PRESENT THIS QR CODE AT ENTRANCE - DO NOT SHARE - YOU CAN TAKE A SCREENSHOT",
+//     qrDescription: "This QR code is your entry ticket. If you encounter any issues, assistance will be available at the entrance."
+//   }
+
+//   const content = language === 'fr' ? frenchContent : englishContent
+
+//   return (
+//     <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#f0f8ff' }}>
+//       <div className="relative max-w-lg w-full overflow-hidden text-center text-gray-800" style={{ backgroundColor: '#fff' }}>
+//         {/* Bouton de changement de langue */}
+//         <button 
+//           onClick={toggleLanguage}
+//           className="absolute top-4 right-4 z-50 flex items-center gap-1 border-green-700 border bg-gree-600/20 px-2 py-1 rounded-full shadow-sm hover:bg-white transition-all"
+//         >
+//           <FaLanguage className="text-green-700" />
+//           <span className="text-sm text-green-800">{language === 'fr' ? 'ENGLISH' : 'FRANCAIS'}</span>
+//         </button>
+
+//         {/* Floral Decorations */}
+//         <img src="/assets/top.png" alt="Top Left Flower" loading="lazy" className="absolute w-[290px] top-[0px]  left-[0px]" />
+//         <img src="/top.webp" alt="Top Right Flower" loading="lazy" className="absolute w-[165px] top-[26px] -right-[190px]" />
+//         <img src="/wed-day.webp" alt="Wedding Day" loading="lazy" className="absolute top-[2%] w-[102px] left-[50%] -translate-x-[50%] -translate-y-[50%]" />
+//         <img src="/ecal.webp" alt="Bottom Left Flower" loading="lazy" className="absolute w-[280px] -bottom-[83px] -left-[120px]" />
+//         <img src="/assets/set.png" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-0 right-0 w-32" />
+//         <img src="/assets/set.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[125px] -right-[27px] rotate-[-23deg] w-[113px]" />
+//         <img src="/assets/set.png" alt="Bottom Right Flower" loading="lazy" className="absolute top-[130px] right-[17px] w-[53px]" />
+//         <img src="/assets/t.png" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-[0px] right-[0px] rotate- w-[133px]" />
+
+//         {/* Participant Name */}
+//         <div className="mt-16 pt-7">
+//           {qrData.isCouple && (
+//             <h1 className="text-sm font- text-gray-700">
+//               - Couple -
+//             </h1>
+//           )}
+//           {!qrData.isCouple && (
+//             <h1 className="text-sm font- text-gray-700">
+//               {language === 'fr' ? "-Singleton-" : "-Single-"}
+//             </h1>
+//           )}
+//           <h1 className="text-2xl font-bold text-gray-800">
+//             {qrData.participants[0].name}
+//           </h1>
+//           {qrData.isCouple && qrData.participants[1].name && (
+//             <h1 className="text-2xl font-bold text-gray-800">
+//               & {qrData.participants[1].name}
+//             </h1>
+//           )}
+//           <p className="text-gray-600 mt-2">
+//             {content.title}
+//           </p>
+//         </div>
+
+//         {/* Couple Photo */}
+//          <div className="my-6 relative">
+//           <div className="relative w-[290px] h-[290px] mx-auto">
+//             <svg
+//               viewBox="0 0 260 260"
+//               className="absolute top-0 left-0 w-full h-full z-10"
+//             >
+//               <defs>
+//                 <clipPath id="hexClip">
+//                   <polygon points="130,10 240,65 240,195 130,250 20,195 20,65" />
+//                 </clipPath>
+//               </defs>
+//               <image
+//                 href="/coupl.jpg"
+//                 width="260"
+//                 height="260"
+//                 clipPath="url(#hexClip)"
+//                 preserveAspectRatio="xMidYMid slice"
+//               />
+//             </svg>
+
+//             <svg
+//               viewBox="0 0 260 260"
+//               className="absolute size-[110%] translate-x-[-50%] translate-y-[-50%] top-[50%] left-[50%] z-0 pointer-events-none"
+//             >
+//               <polygon
+//                 points="130,10 240,65 240,195 130,250 20,195 20,65"
+//                 fill="none"
+//                 stroke="#A4B9A4"
+//                 strokeWidth="4"
+//               />
+//             </svg>
+//             {/* <img src="/assets/lil.png" alt="Decoration" loading="lazy" className="absolute top-[50%] rotate-[3deg] z-50 translate-y-[-10%] right-[50%] translate-x-[50%] w-[305px]" /> */}
+//             <img src="/assets/off.png" alt="Decoration" loading="lazy" className="absolute  top-[24%] rotate-[-105deg] z-50 translate-y-[-10%] right-[50%] translate-x-[50%] w-[305px]" />
+//             <img src="/assets/off.png" alt="Decoration" loading="lazy" className="absolute  top-[24%] rotate-[-105deg] z-50 translate-y-[-10%] right-[50%] translate-x-[50%] w-[305px]" />
+//           </div>
+//         </div> 
+//         {/* Couple Photo - Version contour doré élégant */}
+
+
+//         {/* Invitation Message */}
+//         <div className="mt-[90px] px-4 text-lg text-gray-700">
+//           <p className="mb-4">{content.invitationText[0]}</p>
+
+//           <div className="mt-4 flex  mx-auto flex-col w-max font-bold ">
+//             <h3 className="text-3xl font-semibold text-gray-800">Romain</h3>
+//             <span className="text-lg font-bold h-[23px] my-1 grid justify-center text-blue-600">
+//               <Heart className="text-green-700 spain inline-block"/>
+//               <Heart className="text-green-500 translate-x-[14px] inline-block translate-y-[-23px] rotate-6"/>
+//             </span>
+//             <h3 className="text-3xl font-semibold text-gray-800">Eugenie</h3>
+//           </div>
+
+//           <p className="mt-4">{content.invitationText[1]}</p>
+//           {/* <p className="mt-2">{content.invitationText[2]}</p>
+//           <p className="mt-4">{content.invitationText[3]}</p> */}
+//         </div>
+
+//         <p className="my-4 px-4  font-bold text-gray-600">
+//           {content.programTitle}
+//         </p>
+
+//         {/* Date and Venue */}
+//         <div className="text-center space-y-4 px-2">
+//           {content.dates.map((date, index) => (
+//             <div key={index}>
+//               {date.day && <p className="text-xl text-green-800 font-bold ubuntu  ">{date.day}</p>}
+//               <div className="flex items-center justify-center gap-2">
+//                 <img src={date.icon} className='size-7 rotate-2' loading="lazy" />
+//                 <p className="text-gray-600 serif text-xl my-2"> {date.time}</p>
+//               </div>
+//               <FaArrowDown size={12} className='block c mx-auto animate-bounce text-blue-400' />
+//               <p className="text-gray-600 text-xl">{date.event}</p>
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* Location */}
+//         <div className="text-center px-2 mt-4 ">
+//           <p className="text-2xl text-green-800 font-bold">
+//             {content.locationTitle}
+//           </p>
+//           <p className="px-4  text-2xl my-2 font-bold text-animated-color">{content.location}</p>
+//           <p className="text-gray-600 text-xl">{content.address}</p>
+//           <p className="text-gray-600 text-xl">{content.reference}</p>
+//         </div>
+
+//         {/* Information de sécurité */}
+//         <div className="mt-8 text-center p-2">
+//           <div className="border-2 border-red-300 bg-red-50 p-4 rounded-2xl shadow-sm flex items-start gap-4">
+//             <div className="text-red-500 block mt-1">
+//               <FiAlertTriangle size={24} />
+//             </div>
+//             <div>
+//               <p className="text-red-700 text-sm font-bold mb-2">
+//                 {language === 'fr' 
+//                   ? "INFORMATION IMPORTANTE:"
+//                   : "IMPORTANT INFORMATION:"}
+//               </p>
+//               <p className="text-red-700 text-sm mb-2">
+//                 {content.securityMessage}
+//               </p>
+//               <p className="text-red-700 text-sm">
+//                 {language === 'fr' 
+//                   ? "Présentez votre code QR à l'entrée. En cas de souci, une assistance sera disponible."
+//                   : "Present your QR code at the entrance. Assistance will be available if needed."}
+//               </p>
+//             </div>
+//           </div> 
+//         </div>
+
+//         <div className="mt-8 text-center">
+//           <p className="text-gray-800 text-lg">{content.closing}</p>
+//           <p className="mt-2 text-gray-700 text-xl">{content.families}</p>
+//         </div>
+
+//         {/* Signature */}
+//         <p className="text-gray-600 text-sm mt-2">
+//           {language === 'fr' 
+//             ? formatFrenchDate(qrData.timestamp)
+//             : formatEnglishDate(qrData.timestamp)}
+//         </p>
+
+//         {/* QR Code Section - DÉPLACÉ EN BAS */}
+//         <div className="mt-8 mb-8 relative">
+//           <div className={`mx-auto p-2 border-4 ${isPulsing ? 'border-green-500' : 'border-blue-400'} rounded-xl transition-all duration-1000 w-max relative blur-sm`}
+//                style={{ 
+//                  backgroundColor: '#f8fbff',
+//                  boxShadow: isPulsing ? '0 0 20px rgba(72, 187, 120, 0.7)' : '0 0 10px rgba(59, 130, 246, 0.5)',
+//                  transform: 'scale(0.8)'
+//                }}>
+//             <QRCodeSVG
+//               value={JSON.stringify(qrContent)}
+//               size={180}
+//               level="H"
+//               includeMargin={true}
+//               fgColor="#000"
+//             />
+//           </div>
+
+//           {/* Message pour le QR Code */}
+//           <div className="mt-3 px-4 text-center">
+//             <p className="text-sm font-bold text-green-700 mb-1">
+//               {content.qrInstruction}
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
 import { FiAlertTriangle } from 'react-icons/fi'
 import { FaArrowDown, FaLanguage } from 'react-icons/fa'
 import { Heart } from 'lucide-react'
 import Head from 'next/head'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// Enregistrer ScrollTrigger
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 interface Participant {
   name: string
@@ -64,6 +403,17 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
   const [language, setLanguage] = useState<'fr' | 'en'>('fr')
   const [isPulsing, setIsPulsing] = useState(false)
 
+  // Réfs pour les animations
+  const containerRef = useRef<HTMLDivElement>(null)
+  const titleRef = useRef<HTMLDivElement>(null)
+  const photoRef = useRef<HTMLDivElement>(null)
+  const invitationRef = useRef<HTMLDivElement>(null)
+  const programRef = useRef<HTMLDivElement>(null)
+  const locationRef = useRef<HTMLDivElement>(null)
+  const securityRef = useRef<HTMLDivElement>(null)
+  const qrRef = useRef<HTMLDivElement>(null)
+  const floralDecorationsRef = useRef<HTMLImageElement[]>([])
+
   useEffect(() => {
     // Animation de pulsation pour le QR code
     const interval = setInterval(() => {
@@ -71,6 +421,215 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     }, 1500)
 
     return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    // Initialiser les animations GSAP
+    const ctx = gsap.context(() => {
+      // Animation des décorations florales
+      floralDecorationsRef.current.forEach((deco, index) => {
+        if (deco) {
+          gsap.fromTo(deco,
+            {
+              opacity: 0,
+              scale: 0.8,
+              rotation: -10
+            },
+            {
+              opacity: 1,
+              scale: 1,
+              rotation: 0,
+              duration: 1.5,
+              ease: "back.out(1.7)",
+              scrollTrigger: {
+                trigger: deco,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse"
+              }
+            }
+          )
+        }
+      })
+
+      // Animation du titre
+      gsap.fromTo(titleRef.current,
+        {
+          y: 50,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 85%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animation de la photo
+      gsap.fromTo(photoRef.current,
+        {
+          scale: 0.5,
+          opacity: 0,
+          rotationY: 90
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          rotationY: 0,
+          duration: 1.5,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: photoRef.current,
+            start: "top 75%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animation du texte d'invitation
+      gsap.fromTo(invitationRef.current,
+        {
+          y: 30,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          stagger: 0.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: invitationRef.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animation du programme
+      gsap.fromTo(programRef.current,
+        {
+          x: -50,
+          opacity: 0
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: programRef.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animation du lieu
+      gsap.fromTo(locationRef.current,
+        {
+          x: 50,
+          opacity: 0
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: locationRef.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animation de l'alerte sécurité
+      gsap.fromTo(securityRef.current,
+        {
+          scale: 0.8,
+          opacity: 0
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          ease: "elastic.out(1, 0.5)",
+          scrollTrigger: {
+            trigger: securityRef.current,
+            start: "top 85%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animation du QR code
+      gsap.fromTo(qrRef.current,
+        {
+          y: 50,
+          opacity: 0,
+          scale: 0.5
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1.5,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: qrRef.current,
+            start: "top 85%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animation des éléments de date
+      gsap.fromTo(".date-item",
+        {
+          y: 30,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.3,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: programRef.current,
+            start: "top 75%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      )
+
+      // Animation en boucle pour les flèches
+      gsap.to(".animate-bounce", {
+        y: -10,
+        duration: 0.6,
+        yoyo: true,
+        repeat: -1,
+        ease: "sine.inOut"
+      })
+
+    }, containerRef)
+
+    return () => ctx.revert()
   }, [])
 
   const toggleLanguage = () => {
@@ -88,19 +647,18 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     ],
     programTitle: "PROGRAMME DE MARIAGE",
     dates: [
-      { day: "Vendredi 29 Août 2025", time: "à 11h00", event: "Mariage Civil", icon: "/certificate.png" },
-      { day: "Samedi 30 Août 2025", time: "à 12h30", event: "Mariage Religieux", icon: "/rings.png" },
-      { day: "", time: "à 18h00", event: "Arrivée des invités", icon: "/glass.png" },
-      { day: "", time: "à 19h00", event: "Entrée des mariés", icon: "/glass.png" }
+      { day: "Vendredi 28 Novembre 2025", time: "à 11h00", event: "Mariage Civil", icon: "/certificate.png" },
+      { day: "Samedi 29 Novembre 2025", time: "à 12h30", event: "Mariage Religieux", icon: "/rings.png" },
+      { day: "", time: "à 19h00", event: "Reception", icon: "/glass.png" }
     ],
     locationTitle: "Lieu des cérémonies",
-    location: "Chapiteau Royal",
+    location: "Grand Perchoir (Royal Marquee)",
     address: "Avenue des Chutes coin Kambove",
-    reference: "Référence: Ministère du travail Haut-Katanga",
+    reference: "Référence: Cra usine",
     closing: "Avec toute notre joie,",
     families: "La famille",
     securityMessage: "Pour des raisons de sécurité, l'arrivée  des invités commence à 18h00. Veuillez vous présenter à la salle à cette heure.",
-    qrInstruction: "PRÉSENTEZ CE CODE QR À L'ENTRÉE - NE PAS PARTAGER - VOUS POUVEZ FAIRE UNE CAPTURE D'ECRAN",
+    qrInstruction: "PRÉSENTEZ CE CODE QR À L'ENTRÉE ",
     qrDescription: "Ce code QR est votre billet d'entrée. En cas de problème, une assistance sera disponible à l'entrée."
   }
 
@@ -115,8 +673,8 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     ],
     programTitle: "WEDDING PROGRAM",
     dates: [
-      { day: "Friday August 29, 2025", time: "at 11:00 am", event: "Civil Wedding", icon: "/certificate.png" },
-      { day: "Saturday August 30, 2025", time: "at 12:30 pm", event: "Religious Wedding", icon: "/rings.png" },
+      { day: "Friday August 28, 2025", time: "at 11:00 am", event: "Civil Wedding", icon: "/certificate.png" },
+      { day: "Saturday August 29, 2025", time: "at 12:30 pm", event: "Religious Wedding", icon: "/rings.png" },
       { day: "", time: "at 6:00 pm", event: "Guest Arrival", icon: "/glass.png" },
       { day: "", time: "at 7:00 pm", event: "Arrival of the Bride and Groom", icon: "/glass.png" }
     ],
@@ -134,7 +692,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
   const content = language === 'fr' ? frenchContent : englishContent
 
   return (
-    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#f0f8ff' }}>
+    <div ref={containerRef} className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#f0f8ff' }}>
       <div className="relative max-w-lg w-full overflow-hidden text-center text-gray-800" style={{ backgroundColor: '#fff' }}>
         {/* Bouton de changement de langue */}
         <button 
@@ -146,16 +704,65 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         </button>
 
         {/* Floral Decorations */}
-        <img src="/fleure.webp" alt="Top Left Flower" loading="lazy" className="absolute w-[270px] -top-[155px] rotate-[-8deg] left-[-138px]" />
-        <img src="/top.webp" alt="Top Right Flower" loading="lazy" className="absolute w-[165px] top-[26px] -right-[190px]" />
-        <img src="/wed-day.webp" alt="Wedding Day" loading="lazy" className="absolute top-[2%] w-[102px] left-[50%] -translate-x-[50%] -translate-y-[50%]" />
-        <img src="/ecal.webp" alt="Bottom Left Flower" loading="lazy" className="absolute w-[280px] -bottom-[83px] -left-[120px]" />
-        <img src="/deco.webp" alt="Bottom Right Flower" loading="lazy" className="absolute bottom-0 right-0 w-32" />
-        <img src="/fleure-deco.webp" alt="Bottom Right Flower" loading="lazy" className="absolute top-[145px] -right-[17px] w-[83px]" />
-        <img src="/deco.webp" alt="Bottom Right Flower" loading="lazy" className="absolute top-[130px] right-[17px] w-[53px]" />
+        <img 
+          ref={el => floralDecorationsRef.current[0] = el!}
+          src="/assets/top.png" 
+          alt="Top Left Flower" 
+          loading="lazy" 
+          className="absolute w-[290px] top-[0px] left-[0px]" 
+        />
+        <img 
+          ref={el => floralDecorationsRef.current[1] = el!}
+          src="/top.webp" 
+          alt="Top Right Flower" 
+          loading="lazy" 
+          className="absolute w-[165px] top-[26px] -right-[190px]" 
+        />
+        <img 
+          ref={el => floralDecorationsRef.current[2] = el!}
+          src="/wed-day.webp" 
+          alt="Wedding Day" 
+          loading="lazy" 
+          className="absolute top-[2%] w-[102px] left-[50%] -translate-x-[50%] -translate-y-[50%]" 
+        />
+        <img 
+          ref={el => floralDecorationsRef.current[3] = el!}
+          src="/ecal.webp" 
+          alt="Bottom Left Flower" 
+          loading="lazy" 
+          className="absolute w-[280px] -bottom-[83px] -left-[120px]" 
+        />
+        <img 
+          ref={el => floralDecorationsRef.current[4] = el!}
+          src="/assets/set.png" 
+          alt="Bottom Right Flower" 
+          loading="lazy" 
+          className="absolute bottom-0 right-0 w-32" 
+        />
+        <img 
+          ref={el => floralDecorationsRef.current[5] = el!}
+          src="/assets/set.png" 
+          alt="Bottom Right Flower" 
+          loading="lazy" 
+          className="absolute top-[125px] -right-[27px] rotate-[-23deg] w-[113px]" 
+        />
+        <img 
+          ref={el => floralDecorationsRef.current[6] = el!}
+          src="/assets/set.png" 
+          alt="Bottom Right Flower" 
+          loading="lazy" 
+          className="absolute top-[130px] right-[17px] w-[53px]" 
+        />
+        <img 
+          ref={el => floralDecorationsRef.current[7] = el!}
+          src="/assets/t.png" 
+          alt="Bottom Right Flower" 
+          loading="lazy" 
+          className="absolute bottom-[0px] right-[0px] rotate- w-[133px]" 
+        />
 
         {/* Participant Name */}
-        <div className="mt-16 pt-7">
+        <div ref={titleRef} className="mt-16 pt-7">
           {qrData.isCouple && (
             <h1 className="text-sm font- text-gray-700">
               - Couple -
@@ -180,7 +787,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         </div>
 
         {/* Couple Photo */}
-        <div className="my-6 relative">
+        <div ref={photoRef} className="my-6 relative">
           <div className="relative w-[290px] h-[290px] mx-auto">
             <svg
               viewBox="0 0 260 260"
@@ -192,7 +799,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
                 </clipPath>
               </defs>
               <image
-                href="/couple-picture-3.webp"
+                href="/coupl.jpg"
                 width="260"
                 height="260"
                 clipPath="url(#hexClip)"
@@ -211,37 +818,36 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
                 strokeWidth="4"
               />
             </svg>
-            <img src="/fleure.webp" alt="Decoration" loading="lazy" className="absolute top-[50%] rotate-[31deg] z-50 translate-y-[-23%] right-[50%] translate-x-[50%] w-[305px]" />
+            <img src="/assets/off.png" alt="Decoration" loading="lazy" className="absolute  top-[24%] rotate-[-105deg] z-50 translate-y-[-10%] right-[50%] translate-x-[50%] w-[305px]" />
+            <img src="/assets/off.png" alt="Decoration" loading="lazy" className="absolute  top-[24%] rotate-[-105deg] z-50 translate-y-[-10%] right-[50%] translate-x-[50%] w-[305px]" />
           </div>
         </div>
 
         {/* Invitation Message */}
-        <div className="mt-[90px] px-4 text-lg text-gray-700">
+        <div ref={invitationRef} className="mt-[90px] px-4 text-lg text-gray-700">
           <p className="mb-4">{content.invitationText[0]}</p>
 
-          <div className="mt-4 flex mx-auto flex-col w-max font-bold ">
-            <h3 className="text-3xl font-semibold text-gray-800">Christelle</h3>
+          <div className="mt-4 flex  mx-auto flex-col w-max font-bold ">
+            <h3 className="text-3xl font-semibold text-gray-800">Romain</h3>
             <span className="text-lg font-bold h-[23px] my-1 grid justify-center text-blue-600">
               <Heart className="text-green-700 spain inline-block"/>
               <Heart className="text-green-500 translate-x-[14px] inline-block translate-y-[-23px] rotate-6"/>
             </span>
-            <h3 className="text-3xl font-semibold text-gray-800">Vusi</h3>
+            <h3 className="text-3xl font-semibold text-gray-800">Eugenie</h3>
           </div>
 
           <p className="mt-4">{content.invitationText[1]}</p>
-          <p className="mt-2">{content.invitationText[2]}</p>
-          <p className="mt-4">{content.invitationText[3]}</p>
         </div>
 
-        <p className="my-4 px-4 font-bold text-gray-600">
+        <p ref={programRef} className="my-4 px-4 font-bold text-gray-600">
           {content.programTitle}
         </p>
 
         {/* Date and Venue */}
         <div className="text-center space-y-4 px-2">
           {content.dates.map((date, index) => (
-            <div key={index}>
-              {date.day && <p className="text-2xl text-green-800 font-bold ubuntu ">{date.day}</p>}
+            <div key={index} className="date-item">
+              {date.day && <p className="text-xl text-green-800 font-bold ubuntu">{date.day}</p>}
               <div className="flex items-center justify-center gap-2">
                 <img src={date.icon} className='size-7 rotate-2' loading="lazy" />
                 <p className="text-gray-600 serif text-xl my-2"> {date.time}</p>
@@ -253,17 +859,17 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         </div>
 
         {/* Location */}
-        <div className="text-center px-2 mt-4">
+        <div ref={locationRef} className="text-center px-2 mt-4">
           <p className="text-2xl text-green-800 font-bold">
             {content.locationTitle}
           </p>
-          <p className="px-4 text-3xl my-2 font-bold text-animated-color">{content.location}</p>
+          <p className="px-4 text-2xl my-2 font-bold text-animated-color">{content.location}</p>
           <p className="text-gray-600 text-xl">{content.address}</p>
           <p className="text-gray-600 text-xl">{content.reference}</p>
         </div>
 
         {/* Information de sécurité */}
-        <div className="mt-8 text-center p-2">
+        <div ref={securityRef} className="mt-8 text-center p-2">
           <div className="border-2 border-red-300 bg-red-50 p-4 rounded-2xl shadow-sm flex items-start gap-4">
             <div className="text-red-500 block mt-1">
               <FiAlertTriangle size={24} />
@@ -298,13 +904,12 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
             : formatEnglishDate(qrData.timestamp)}
         </p>
 
-        {/* QR Code Section - DÉPLACÉ EN BAS */}
-        <div className="mt-8 mb-8 relative">
-          <div className={`mx-auto p-2 border-4 ${isPulsing ? 'border-green-500' : 'border-blue-400'} rounded-xl transition-all duration-1000 w-max relative blur-sm`}
+        {/* QR Code Section */}
+        <div ref={qrRef} className="mt-8 mb-8 relative">
+          <div className={`mx-auto p-2 border-4 ${isPulsing ? 'border-green-500' : 'border-blue-400'} rounded-xl transition-all duration-1000 w-max relative`}
                style={{ 
                  backgroundColor: '#f8fbff',
                  boxShadow: isPulsing ? '0 0 20px rgba(72, 187, 120, 0.7)' : '0 0 10px rgba(59, 130, 246, 0.5)',
-                 transform: 'scale(0.8)'
                }}>
             <QRCodeSVG
               value={JSON.stringify(qrContent)}
