@@ -11,10 +11,14 @@
 
 } 
 @font-face {
-  font-family: second;
-  src: url(/RusticRoadway.otf);
+  font-family: ocean;
+  src: url(/OceanTrace.ttf);
 
 }
+.ocean{
+  font-family: ocean;
+}
+
 @keyframes textColorCycle {
   0% { color: #4B5563; }     /* gris */
   25% { color: #3B82F6; }    /* bleu */

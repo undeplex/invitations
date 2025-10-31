@@ -128,7 +128,6 @@ export default function RootLayout({
     <html lang="fr" className="force-light-mode" data-mode="light">
       <head>
          <link rel="preload" href="/fleure.webp" as="image" />
-        <link rel="preload" href="/top.png" as="image" />
         <link rel="preload" href="/wed-day.webp" as="image" />
         <link rel="preload" href="/ecal.webp" as="image" />
         <link rel="preload" href="/deco.webp" as="image" />
