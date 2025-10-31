@@ -474,6 +474,20 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           className="absolute top-[125px] -right-[27px] rotate-[-23deg] w-[113px]" 
         />
         <img 
+          ref={floralBottomRight2Ref}
+          src="/assets/set.png" 
+          alt="Bottom Right Flower" 
+          loading="lazy" 
+          className="absolute top-[725px] left-[27px] rotate-[-23deg] w-[113px]" 
+        />
+        <img 
+          ref={floralBottomRight2Ref}
+          src="/assets/set.png" 
+          alt="Bottom Right Flower" 
+          loading="lazy" 
+          className="absolute top-[1115px] right-[17px] rotate-[-13deg] w-[73px]" 
+        />
+        <img 
           ref={floralBottomRight3Ref}
           src="/assets/set.png" 
           alt="Bottom Right Flower" 
@@ -481,7 +495,6 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           className="absolute top-[130px] right-[17px] w-[53px]" 
         />
         <img 
-          ref={floralBottomRight4Ref}
           src="/assets/t.png" 
           alt="Bottom Right Flower" 
           loading="lazy" 
