@@ -538,7 +538,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         </clipPath>
       </defs>
       <image
-        href="/coupl.jpg"
+        href="/couple.jpg"
         width="260"
         height="260"
         clipPath="url(#circleClip)"
