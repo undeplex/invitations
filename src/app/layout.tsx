@@ -100,11 +100,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Invitation",
     description: "Voici votre lien  d'invitation à notre mariage",
-    url: "https://justinvitation.vercel.app",
+    url: "https://moninvitation.vercel.app",
     type: "website",
     images: [
       {
-        url: "https://i.ibb.co/5WqS64p9/couple-picture-3.webp",
+        url: "https://i.ibb.co/HDPmvD3K/couple-picture.jpg",
         width: 1200,
         height: 630,
         alt: "Description de l'image",
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Votre Titre pour Twitter",
     description: "Description pour Twitter",
-    images: ["https://i.ibb.co/5WqS64p9/couple-picture-3.webp"],
+    images: ["https://i.ibb.co/HDPmvD3K/couple-picture.jpg"],
   },
 };
 // URLSearchParams

@@ -969,35 +969,21 @@ export default function AdminLinkGenerator() {
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
-  // const shareLink = (url: string, name: string) => {
-  //   const SUPPORT_PHONE = "+243990664406";
-  //   if (navigator.share) {
-  //     navigator.share({
-  //       title: `Bonjour ${name}`,
-  //       text: `${name} Veuillez cliquer sur le lien si dessous pour obtenir votre invitation au mariage de Christelle & Vusi. \n\nQuestions ? Contactez-nous au : ${SUPPORT_PHONE} \n\n Lien :`,
-  //       url: url,
-  //     }).catch(() => {
-  //       copyLink(url);
-  //     });
-  //   } else {
-  //     copyLink(url);
-  //   }
-  // };
-const shareLink = (url: string, name: string) => {
+  const shareLink = (url: string, name: string) => {
     const SUPPORT_PHONE = "+243990664406";
     if (navigator.share) {
       navigator.share({
-        title: `Christelle & Vusi's wedding - Mariage de Christelle & Vusi`,
-        text: `Hello/Bonjour ${name}.\n\nVeuillez rouvrir l'invitation pour voir les mises à jour du programme - Please reopen the invitation to see the program updates.\n\nPour toute question, contactez-nous au ${SUPPORT_PHONE} - For any questions, contact us at ${SUPPORT_PHONE}`,url:url,
-        // Note: nous avons retiré la mention du lien dans le texte
-        // et nous utilisons le champ URL séparément
+        title: `Bonjour ${name}`,
+        text: `${name} Veuillez cliquer sur le lien si dessous pour obtenir Lire votre invitations au mariage de Romain et Eugenie. \n\nQuestions ? Contactez-nous au : ${SUPPORT_PHONE} \n\n Lien :`,
+        url: url,
       }).catch(() => {
         copyLink(url);
       });
     } else {
       copyLink(url);
     }
-};
+  };
+
 
   const exportLinks = () => {
     try {
