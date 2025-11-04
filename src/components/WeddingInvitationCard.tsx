@@ -399,13 +399,13 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
     <div ref={containerRef} className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#f0f8ff' }}>
       <div className="relative max-w-lg w-full overflow-hidden text-center text-gray-800" style={{ backgroundColor: '#fff' }}>
         {/* Bouton de changement de langue */}
-        <button 
+        {/* <button 
           onClick={toggleLanguage}
           className="absolute top-4 right-4 z-50 flex items-center gap-1 border-green-700 border bg-gree-600/20 px-2 py-1 rounded-full shadow-sm hover:bg-white transition-all"
         >
           <FaLanguage className="text-green-700" />
           <span className="text-sm text-green-800">{language === 'fr' ? 'ENGLISH' : 'FRANCAIS'}</span>
-        </button>
+        </button> */}
 
         {/* Floral Decorations */}
         <img 
@@ -445,42 +445,49 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         />
         <img 
           
-          src="/assets/off.png" 
+          src="/assets/b.png" 
           alt="Top Left Flower" 
           loading="lazy" 
-          className="absolute w-[267px] md:w-[289px] block rotate-[-190deg] transform scale-x-[-1] top-[-140px] mirr left-[-15px]" 
+          className="absolute w-[157px] md:w-[289px] block top-0 left-o ]" 
+        />
+        <img 
+          
+          src="/assets/a.png" 
+          alt="Top Left Flower" 
+          loading="lazy" 
+          className="absolute w-[157px] md:w-[289px] block top-0 right-[0]" 
         />
       
         <img 
           ref={floralWedDayRef}
-          src="/wedday.png" 
+          src="/wed-day.png" 
           alt="Wedding Day" 
           loading="lazy" 
           className="absolute top-[0%] w-[102px] left-[50%] -translate-x-[50%] -translate-y-[50%]" 
         />
-        <img 
+        {/* <img 
           ref={floralBottomLeftRef}
           src="/ecal.webp" 
           alt="Bottom Left Flower" 
           loading="lazy" 
           className="absolute w-[260px] -bottom-[93px] -left-[120px]" 
-        />
+        /> */}
        
         <img 
           ref={floralBottomRight2Ref}
-          src="/assets/set.png" 
+          src="/assets/c.png" 
           alt="Bottom Right Flower" 
           loading="lazy" 
-          className="absolute top-[125px] -right-[27px] rotate-[-23deg] w-[113px]" 
+          className="absolute bottom-0 left-0  w-[113px]" 
         />
         <img 
           ref={floralBottomRight2Ref}
-          src="/assets/set.png" 
+          src="/assets/d.png" 
           alt="Bottom Right Flower" 
           loading="lazy" 
-          className="absolute top-[725px] left-[27px] rotate-[-23deg] w-[113px]" 
+          className="absolute bottom-0 right-0 w-[113px]" 
         />
-        <img 
+        {/* <img 
           ref={floralBottomRight2Ref}
           src="/assets/set.png" 
           alt="Bottom Right Flower" 
@@ -499,7 +506,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           alt="Bottom Right Flower" 
           loading="lazy" 
           className="absolute bottom-[0px] right-[0px] rotate- w-[103px]" 
-        />
+        /> */}
 
         {/* Participant Name */}
         <div ref={titleRef} className="mt-20 pt-7">
@@ -559,7 +566,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         strokeWidth="4"
       />
     </svg>
-    <img src="/assets/lil.png" alt="Decoration" loading="lazy" className="absolute top-[54%] rotate-[05deg] z-50 translate-y-[-10%] right-[50%] translate-x-[50%] w-[435px]" />
+    <img src="/assets/e.png" alt="Decoration" loading="lazy" className="absolute top-[34%] rotate-[44deg] z-50 translate-y-[-10%] right-[50%] translate-x-[50%] w-[275px]" />
   </div>
 </div>
 
