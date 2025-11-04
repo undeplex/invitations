@@ -2654,11 +2654,12 @@ export default function AdminLinkGenerator() {
   }
 
   const shareLink = (url: string, name: string) => {
-    const SUPPORT_PHONE = "+243990664406";
+    const SUPPORT_PHONE =  "+243976022715";
+    const SUPPORT_PHONE2 = "+243991157894";
     if (navigator.share) {
       navigator.share({
         // title: `Bonjour ${name}`,
-        text: `Bonjour ${name}, Veuillez cliquer sur le lien si dessous pour voir votre invitations au mariage de Romain et Eugenie. \n\nQuestions ? Contactez-nous au : ${SUPPORT_PHONE} \n\n Lien :`,
+        text: `Bonjour ${name}, Veuillez cliquer sur le lien ci après pour accéder à votre invitation pour le mariage de Romain et Eugenie. \n\nQuestions ? Contactez-nous au : ${SUPPORT_PHONE} \n ${SUPPORT_PHONE2} \n\n Lien :`,
         url: url,
       }).catch(() => {
         copyLink(url);
