@@ -2657,8 +2657,8 @@ export default function AdminLinkGenerator() {
     const SUPPORT_PHONE = "+243990664406";
     if (navigator.share) {
       navigator.share({
-        title: `Bonjour ${name}`,
-        text: `${name} Veuillez cliquer sur le lien si dessous pour obtenir Lire votre invitations au mariage de Romain et Eugenie. \n\nQuestions ? Contactez-nous au : ${SUPPORT_PHONE} \n\n Lien :`,
+        // title: `Bonjour ${name}`,
+        text: `Bonjour ${name}, Veuillez cliquer sur le lien si dessous pour voir votre invitations au mariage de Romain et Eugenie. \n\nQuestions ? Contactez-nous au : ${SUPPORT_PHONE} \n\n Lien :`,
         url: url,
       }).catch(() => {
         copyLink(url);
