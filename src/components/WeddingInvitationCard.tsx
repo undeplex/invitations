@@ -1158,7 +1158,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           </div>
         </div>
  <div ref={securityRef} className="mt-3  text-center p-2">
-          <div className="border-2 border-red-300 flex items-center bg-red-50 p-4 rounded-2xl shadow-sm flex items-start gap-4">
+          <div className="border-2 border-red-300 flex items-center bg-red-50 p-4 rounded-2xl shadow-sm  gap-4">
             <div className="text-red-500 block mt-1">
               <FiAlertTriangle size={24} />
             </div>
