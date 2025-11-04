@@ -1193,7 +1193,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         {/* Signature */}
                   <p className="text-gray-600 my-5 text-lg">
                     
-                Un code QR s'affichera ci-dessous 24 avant la reception. Veuillez le présenter à l'entrée de la salle de réception.
+                Un code QR s'affichera ci-dessous 24 heures avant le jour du mariage . Vous allez le présenter à l'entrée de la salle de réception.
                     
                     </p>
 
