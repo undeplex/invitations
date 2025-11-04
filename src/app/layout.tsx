@@ -104,7 +104,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://i.ibb.co/HDPmvD3K/couple-picture.jpg",
+        url: "https://i.ibb.co/y9bwy52/couple-picture.webp",
         width: 1200,
         height: 630,
         alt: "Description de l'image",
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Votre Titre pour Twitter",
     description: "Description pour Twitter",
-    images: ["https://i.ibb.co/HDPmvD3K/couple-picture.jpg"],
+    images: ["https://i.ibb.co/y9bwy52/couple-picture.webp"],
   },
 };
 // URLSearchParams
