@@ -1000,13 +1000,13 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           className="absolute w-[267px] md:w-[389px] top-[500px] left-0" 
         />
         <img 
-          src="/assets/b.png" 
+          src="/assets/b.webp" 
           alt="Top Left Flower" 
           loading="lazy" 
           className="absolute w-[157px] md:w-[189px] block top-0 left-o ]" 
         />
         <img 
-          src="/assets/a.png" 
+          src="/assets/a.webp" 
           alt="Top Left Flower" 
           loading="lazy" 
           className="absolute w-[157px] md:w-[189px] block top-0 right-[0]" 
@@ -1022,14 +1022,14 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
      
         <img 
         
-          src="/assets/c.png" 
+          src="/assets/c.webp" 
           alt="Bottom Right Flower" 
           loading="lazy" 
           className="absolute bottom-0 left-0  w-[123px]" 
         />
         <img 
          
-          src="/assets/d.png" 
+          src="/assets/d.webp" 
           alt="Bottom Right Flower" 
           loading="lazy" 
           className="absolute bottom-0 right-0 w-[123px] " 
@@ -1094,7 +1094,7 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
         strokeWidth="4"
       />
     </svg>
-    <img src="/assets/e.png" alt="Decoration" loading="lazy" className="absolute top-[34%] rotate-[44deg] z-50 translate-y-[-10%] right-[50%] translate-x-[50%] w-[275px]" />
+    <img src="/assets/e.webp" alt="Decoration" loading="lazy" className="absolute top-[34%] rotate-[44deg] z-50 translate-y-[-10%] right-[50%] translate-x-[50%] w-[275px]" />
   </div>
 </div>
 
@@ -1114,8 +1114,11 @@ export const WeddingInvitationCard = ({ qrData }: { qrData: QRData }) => {
           </p>
         </div>
 
-        <p  className="my-4 px-4 font-bold text-gray-600">
+        <p  className="my- px-4 font-bold text-gray-600">
           PROGRAMME DE MARIAGE
+        </p>
+        <p  className="mt-2 my-4 w-[34%] mx-auto h-1 rounded-full an z-50 bg-gray-800 ">
+        
         </p>
 
         {/* Date and Venue */}
