@@ -14,7 +14,7 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 const AUTH_EXPIRATION_KEY = 'auth-expiration'
 const AUTH_TOKEN_KEY = 'auth-token'
-const SESSION_DURATION = 20 * 60 * 1000 // 20 minutes en millisecondes
+const SESSION_DURATION = 24 * 60 * 60 * 1000  // 20 minutes en millisecondes
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
